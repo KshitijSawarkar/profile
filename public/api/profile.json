@@ -1,6 +1,15 @@
 {
   "candidate": "Kshitij Ashok Sawarkar",
-  "title": "Applied AI & Systems Engineer",
+  "headline": "Forward Deployed Systems & Robotics Engineer | M.Tech Control & Instrumentation (MNNIT Allahabad)",
+  "subtitle": "Integrating Autonomous Systems, Edge AI, and Deterministic Floor Automation at the Customer Boundary.",
+  "location": "Bengaluru, India (Available for APAC / Regional Field Deployments)",
+  "contact": {
+    "email": "kshitijsawarkar333@gmail.com",
+    "phone": "+919823252972",
+    "github": "https://github.com/KshitijSawarkar",
+    "linkedin": "https://linkedin.com/in/kshitijas"
+  },
+  "operational_manifesto": "Forward Deployed Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, operating at the physical intersection of enterprise automation, autonomous mobile robots (AMRs), and edge intelligence. Proven record deploying customer-facing deterministic software engines that eliminate production backlogs in sub-50ms (Wakefit manufacturing) and publishing lead-author IEEE research on INT8 edge neural networks (Doc ID: 10627276). Experienced with ROS2 embedded platforms, Hardware-in-the-Loop (HIL) testing, and rapid on-site commissioning without operational downtime.",
   "education": {
     "postgraduate": {
       "degree": "M.Tech in Control & Instrumentation",
@@ -14,51 +23,89 @@
       "duration": "2020 - 2024"
     }
   },
-  "locations": ["Bengaluru, India", "Nagpur, India"],
-  "contact": {
-    "email": "kshitijsawarkar333@gmail.com",
-    "phone": "+919823252972",
-    "github": "https://github.com/KshitijSawarkar",
-    "linkedin": "https://linkedin.com/in/kshitijas"
+  "fde_skill_pillars": {
+    "field_commissioning_robotics_integration": [
+      "Robot Operating System 2 (ROS2)",
+      "Embedded Linux",
+      "AMRs/AGVs",
+      "Sensor Fusion",
+      "Microcontrollers (ESP32, ARM)",
+      "Hardware-in-the-Loop (HIL) Validation"
+    ],
+    "edge_ai_computer_vision": [
+      "YOLOv5",
+      "OpenCV",
+      "Post-Training Quantization (INT8)",
+      "ONNX Runtime",
+      "Raspberry Pi 5",
+      "Low-Latency Inference"
+    ],
+    "customer_systems_integration_automation": [
+      "Deterministic Schema Engines",
+      "Sub-50ms Edge Validation",
+      "REST APIs",
+      "Cloudflare Pages/Workers",
+      "Pydantic v2",
+      "Python",
+      "TypeScript"
+    ],
+    "closed_loop_control_theory": [
+      "State-Space Modeling",
+      "Closed-Loop Feedback Stability",
+      "Root Locus",
+      "Transfer Functions",
+      "MATLAB/Simulink"
+    ]
   },
-  "summary": "Applied AI & Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, specializing in autonomous agent workflows, low-latency edge inference, and deterministic systems automation. Proven record translating high-friction operational workflows into sub-50ms client-side schema engines and deploying quantized neural networks on edge hardware (IEEE Xplore Doc ID: 10627276). Strong background combining control systems theory, model evals, and multi-tier agent orchestration.",
-  "publication": {
-    "journal": "IEEE Xplore",
-    "docId": "10627276",
-    "title": "Automated Edge Vision & Retail Checkout System",
-    "role": "Published Lead Author",
+  "peer_reviewed_research": {
+    "title": "Automated Edge Vision & Retail Checkout System using Quantized YOLOv5 on Embedded Hardware",
+    "citation": "IEEE Xplore | Document ID: 10627276",
+    "role": "Lead Author",
     "date": "March 2026",
-    "keyMetrics": "<1% mAP loss via ONNX INT8 Quantization on Raspberry Pi ARM"
+    "core_moat": "Implemented INT8 Post-Training Quantization via ONNX Runtime to balance activation dynamic ranges on ARM/Raspberry Pi hardware, preserving <1% mAP degradation while delivering sub-second inference (24.6ms)."
   },
-  "skills_taxonomy": {
-    "applied_ai_edge_vision": ["YOLOv5", "OpenCV", "INT8 Quantization", "ONNX Runtime", "Raspberry Pi", "ROS2"],
-    "autonomous_agent_systems": ["Agent State Machines", "Model Context Protocol (MCP)", "LLM Failover Routing", "Pydantic v2 Guardrails"],
-    "systems_automation_edge_web": ["Cloudflare Pages/Workers", "Astro.js", "Sub-50ms Schema Engines", "Python", "TypeScript"],
-    "control_instrumentation": ["Closed-Loop State Feedback", "State-Space Modeling", "HIL Testing", "MATLAB/Simulink"]
-  },
-  "ventures": [
+  "physical_systems_robotics": [
     {
-      "name": "cardsfinders.com",
-      "role": "Founder & Full-Stack Edge Systems Architect",
-      "architecture": "Cloudflare Pages & Workers, Zero Server Cost"
+      "name": "HiWonder MentorPi M1 Autonomous Mobile Robot (ROS2)",
+      "platform": "Raspberry Pi 5 under ROS2",
+      "highlights": "Assembled chassis, flashed real-time system images, configured battery management, integrated monocular camera vision pipelines for autonomous SLAM navigation and obstacle avoidance."
     },
     {
-      "name": "myuselessweb.com",
-      "role": "Creator & Edge Infrastructure Engineer",
-      "architecture": "<50ms Global Latency"
+      "name": "Sensorless Solar Photovoltaic Tracking System",
+      "platform": "Closed-Loop State Actuation",
+      "highlights": "Built a closed-loop tracking mechanism utilizing the photovoltaic output voltage of the solar panels themselves to detect light intensity, eliminating fragile external sensors (LDRs) and reducing physical points of failure."
     }
   ],
   "experience": [
     {
       "company": "Wakefit Innovations Ltd",
       "role": "Systems & Automation Engineering Intern (Intern-PGET)",
+      "location": "Bengaluru & Bommasandra Manufacturing Facility",
       "period": "Aug 2026 – Present",
-      "deployments": ["https://npl-automation.pages.dev", "https://image-sequence-renamer.pages.dev", "Wakefit Repair Calculator"]
+      "deployments": [
+        { "name": "Finished Goods & BOM Schema Transformation Engine", "url": "https://npl-automation.pages.dev/" },
+        { "name": "Batch Asset Ingestion Engine", "url": "https://image-sequence-renamer.pages.dev/" },
+        { "name": "Deterministic Repair Cost Engine", "url": "https://kshitijsawarkar.github.io/Wakefit_Repair_Calculator/" }
+      ]
     },
     {
-      "company": "MNNIT Allahabad",
+      "company": "Motilal Nehru National Institute of Technology (MNNIT) Allahabad",
       "role": "Graduate Teaching Assistant (GTA)",
-      "period": "Aug 2025 – Present"
+      "location": "Prayagraj, India",
+      "period": "Aug 2025 – Present",
+      "highlights": "Graduate Teaching Assistant in Control Systems & Instrumentation. Led hands-on laboratory sessions and tutorials for 100+ undergraduate engineering students. Guided students in closed-loop state feedback design, mathematical stability analysis, benchtop sensor troubleshooting, and Hardware-in-the-Loop (HIL) calibration rigs."
+    }
+  ],
+  "sovereign_ventures": [
+    {
+      "name": "cardsfinders.com",
+      "role": "Founder & Full-Stack Edge Systems Architect",
+      "url": "https://cardsfinders.com"
+    },
+    {
+      "name": "myuselessweb.com",
+      "role": "Creator & Edge Infrastructure Engineer",
+      "url": "https://myuselessweb.com"
     }
   ]
 }

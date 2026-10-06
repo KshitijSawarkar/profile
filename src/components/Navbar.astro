@@ -4,12 +4,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 
 <header class="sticky top-0 z-50 w-full border-b border-midnight-600/60 bg-midnight-900/90 backdrop-blur-md">
   <!-- Top Agent Protocol Banner -->
-  <div class="w-full bg-midnight-950/90 border-b border-midnight-700/50 py-1 px-4 text-center font-mono text-[11px] text-slate-400 flex items-center justify-center gap-2">
+  <div class="agent-repo-pill w-full bg-midnight-950/95 border-b border-midnight-700/60 py-1.5 px-4 text-center font-mono text-[11px] text-slate-300 flex items-center justify-center flex-wrap gap-2">
     <span class="w-1.5 h-1.5 rounded-full bg-lime-neon animate-pulse"></span>
-    <span class="text-slate-300">AI Agent Endpoints:</span>
-    <a href={`${baseUrl}llms.txt`} target="_blank" class="text-lime-neon hover:underline font-semibold">/llms.txt</a>
-    <span class="text-slate-600">&bull;</span>
-    <a href={`${baseUrl}api/profile.json`} target="_blank" class="text-violet-300 hover:underline font-semibold">/api/profile.json</a>
+    <span class="text-slate-200 font-semibold">AI Agent Endpoint:</span>
+    <a href={`${baseUrl}llms.txt`} target="_blank" class="text-lime-neon hover:underline font-bold">/llms.txt</a>
+    <span class="text-slate-500">&bull;</span>
+    <a href={`${baseUrl}api/profile.json`} target="_blank" class="text-violet-300 hover:underline font-bold">/api/profile.json</a>
+    <span class="text-slate-400 hidden sm:inline">(Deterministic ground-truth context to prevent LLM hallucination)</span>
   </div>
 
   <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -22,7 +23,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
           Kshitij Sawarkar
         </span>
         <span class="text-[11px] text-slate-400 font-mono">
-          Applied AI & Systems Engineer
+          Forward Deployed Systems & Robotics Engineer
         </span>
       </div>
     </a>

@@ -15,24 +15,54 @@ export interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    title: "Automated Edge Vision & Retail Checkout System",
-    badge: "IEEE Xplore Peer-Reviewed Research",
+    title: "Automated Edge Vision & Retail Checkout System using Quantized YOLOv5 on Embedded Hardware",
+    badge: "Peer-Reviewed Research & Edge Benchmarks",
     badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
-    role: "Published Lead Author",
-    date: "Published Mar 2026",
-    docId: "IEEE Doc ID: 10627276",
+    role: "Lead Author",
+    date: "IEEE Xplore | Document ID: 10627276",
+    docId: "IEEE Xplore | Document ID: 10627276",
     featured: true,
-    description: "Architected an automated item detection and billing pipeline using custom YOLOv5 models deployed directly onto physical ARM-based Raspberry Pi hardware. Implemented Post-Training Quantization (INT8) via ONNX Runtime to balance activation scales, preserving <1% mAP loss while enabling sub-second inference (24.6ms) without expensive cloud GPUs.",
+    description: "Lead author; implemented INT8 Post-Training Quantization via ONNX Runtime to balance activation dynamic ranges on ARM/Raspberry Pi hardware, preserving <1% mAP degradation while delivering sub-second inference (24.6ms) without expensive cloud GPUs.",
     metrics: [
-      "<1% mAP loss with INT8 Quantization",
-      "Sub-second ARM edge inference (24.6ms)",
-      "Zero reliance on cloud GPUs"
+      "<1% mAP degradation with INT8 Post-Training Quantization",
+      "Sub-second ARM edge inference (24.6ms latency)",
+      "Zero reliance on expensive cloud GPUs for retail edge checkout"
     ],
-    techStack: ["IEEE Xplore", "YOLOv5", "ONNX Runtime", "INT8 Quantization", "Raspberry Pi", "ARM Edge"]
+    techStack: ["IEEE Xplore (Doc ID: 10627276)", "YOLOv5", "ONNX Runtime", "INT8 Quantization", "Raspberry Pi", "ARM Edge"]
+  },
+  {
+    title: "HiWonder MentorPi M1 Autonomous Mobile Robot (ROS2)",
+    badge: "Physical Autonomous Robotics",
+    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
+    role: "Robotics & Autonomous Systems Engineer",
+    date: "Platform: Raspberry Pi 5 under ROS2",
+    featured: false,
+    description: "Assembled chassis, flashed real-time system images, configured battery management, and integrated monocular camera vision pipelines for autonomous SLAM navigation and obstacle avoidance.",
+    metrics: [
+      "Full ROS2 stack running on Raspberry Pi 5",
+      "Autonomous SLAM indoor mapping & path planning",
+      "Monocular camera vision pipeline for obstacle avoidance"
+    ],
+    techStack: ["ROS2", "Raspberry Pi 5", "SLAM Navigation", "Mobile Robotics (AMR)", "Computer Vision"]
+  },
+  {
+    title: "Sensorless Solar Photovoltaic Tracking System",
+    badge: "Autonomous Control & Hardware",
+    badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
+    role: "Hardware & Control Systems Designer",
+    date: "Closed-Loop State Actuation",
+    featured: false,
+    description: "Built a closed-loop tracking mechanism utilizing the photovoltaic output voltage of the solar panels themselves to detect light intensity, eliminating fragile external sensors (LDRs) and reducing physical points of failure.",
+    metrics: [
+      "100% eliminated fragile external sensors (LDRs)",
+      "Direct differential PV voltage gradient sensing",
+      "Closed-loop servo actuation to maintain peak power point"
+    ],
+    techStack: ["Closed-Loop Control", "Microcontroller C++", "Photovoltaic Physics", "Servo Actuation", "Hardware Calibration"]
   },
   {
     title: "cardsfinders.com — Sovereign Edge Financial Tools",
-    badge: "Sovereign Venture & Edge Architecture",
+    badge: "Sovereign Edge Infrastructure",
     badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
     role: "Founder & Full-Stack Edge Systems Architect",
     date: "Jul 2026 – Present",
@@ -40,10 +70,10 @@ const projects: ProjectItem[] = [
     description: "Conceived, architected, and deployed a global financial tools comparison platform hosted entirely on Cloudflare Pages and Workers. Engineered custom edge DNS configurations, Cloudflare email routing rules, and sub-second Time-to-First-Byte (TTFB) delivery pipelines with zero server runtime compute cost.",
     metrics: [
       "Sub-second TTFB global edge delivery",
-      "Top-tier Core Web Vitals & modern SEO",
-      "Zero server runtime compute overhead"
+      "Zero server runtime compute overhead",
+      "Edge DNS & automated Cloudflare routing"
     ],
-    techStack: ["Cloudflare Pages", "Cloudflare Workers", "Edge DNS", "Serverless", "Modern SEO"]
+    techStack: ["Cloudflare Pages", "Cloudflare Workers", "Edge DNS", "Serverless Edge", "TypeScript"]
   },
   {
     title: "myuselessweb.com — High-Traffic Edge Discovery",
@@ -59,34 +89,6 @@ const projects: ProjectItem[] = [
       "High-traffic viral structural architecture"
     ],
     techStack: ["Edge Infrastructure", "Ultra-Low Latency", "DOM Optimization", "Interactive Web"]
-  },
-  {
-    title: "HiWonder MentorPi M1 Autonomous Mobile Robot",
-    badge: "Robotics & Autonomous Navigation",
-    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
-    role: "Robotics & Autonomous Systems Engineer",
-    date: "Jul 2026",
-    description: "Assembled, flashed, and configured the HiWonder MentorPi M1 mobile robot running on a Raspberry Pi 5 under Robot Operating System 2 (ROS2). Integrated monocular camera vision perception, battery power management, and SLAM navigation algorithms for autonomous indoor path planning.",
-    metrics: [
-      "Full ROS2 stack on Raspberry Pi 5",
-      "SLAM indoor mapping & autonomous path planning",
-      "Real-time monocular vision perception"
-    ],
-    techStack: ["ROS2", "Raspberry Pi 5", "SLAM Navigation", "Mobile Robotics", "Computer Vision"]
-  },
-  {
-    title: "Sensorless Solar Photovoltaic Tracking System",
-    badge: "Autonomous Control Systems",
-    badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
-    role: "Hardware & Control Systems Designer",
-    date: "Mar 2026",
-    description: "Invented a closed-loop solar tracking mechanism using the photovoltaic output voltage of the solar panels themselves to detect light gradients, completely eliminating external light-dependent resistors (LDRs). Programmed microcontroller actuation algorithms driving servo motors toward peak power points.",
-    metrics: [
-      "Completely eliminated external LDR sensors",
-      "Direct differential PV gradient sensing",
-      "Closed-loop servo actuation toward peak yield"
-    ],
-    techStack: ["Microcontroller C++", "Closed-Loop Control", "Photovoltaic Physics", "Servo Actuation"]
   }
 ];
 ---
@@ -96,13 +98,13 @@ const projects: ProjectItem[] = [
     <!-- Header -->
     <div class="mb-10">
       <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
-        02 / RESEARCH & SOVEREIGN VENTURES
+        02 / PEER-REVIEWED RESEARCH & PHYSICAL ARTIFACTS
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-        Peer-Reviewed Research & Systems
+        Peer-Reviewed Research & Physical Systems
       </h2>
       <p class="text-slate-400 mt-2 text-base">
-        Selected peer-reviewed IEEE publications, sovereign web platforms, and physical autonomous robotics systems.
+        Lead-author IEEE edge neural network research, physical ROS2 mobile robotics artifacts, and sovereign edge infrastructure.
       </p>
     </div>
 

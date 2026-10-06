@@ -1,27 +1,30 @@
-# Kshitij Ashok Sawarkar - Applied AI & Systems Engineer
+# Kshitij Ashok Sawarkar - Forward Deployed Systems & Robotics Engineer
 > M.Tech Control & Instrumentation (MNNIT Allahabad) | B.Tech ECE (RCOEM Nagpur)
-> Locations: Bengaluru / Nagpur, India
+> Location: Bengaluru, India (Available for APAC / Regional Field Deployments)
 > Contact: kshitijsawarkar333@gmail.com | +91 9823252972
 > Profiles: https://github.com/KshitijSawarkar | https://linkedin.com/in/kshitijas
 
-## Core Summary
-Applied AI & Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, specializing in autonomous agent workflows, low-latency edge inference, and deterministic systems automation. Proven record translating high-friction operational workflows into sub-50ms client-side schema engines and deploying quantized neural networks on edge hardware (IEEE Xplore Doc ID: 10627276). Strong background combining control systems theory, model evals, and multi-tier agent orchestration.
+## Core Operational Manifesto
+Forward Deployed Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, operating at the physical intersection of enterprise automation, autonomous mobile robots (AMRs), and edge intelligence. Proven record deploying customer-facing deterministic software engines that eliminate production backlogs in sub-50ms (Wakefit manufacturing) and publishing lead-author IEEE research on INT8 edge neural networks (Doc ID: 10627276). Experienced with ROS2 embedded platforms, Hardware-in-the-Loop (HIL) testing, and rapid on-site commissioning without operational downtime.
 
-## Primary Roles & Experience
-- **Wakefit Innovations Ltd** (Bengaluru, Aug 2026 – Present): Systems & Automation Engineering Intern (Intern-PGET). Architected client-side BOM & Finished Goods schema transformation engines executing in sub-50ms with 100% data privacy. Live: https://npl-automation.pages.dev, https://image-sequence-renamer.pages.dev
-- **MNNIT Allahabad** (Prayagraj, Aug 2025 – Present): Graduate Teaching Assistant (Control Systems & Instrumentation). Lectured & conducted lab experiments for 100+ undergraduate engineering students.
-- **Sharon Innovations (RCOEM TBI)** (Nagpur, Dec 2023 – Feb 2024): IoT & Embedded Systems Intern. ESP32/Arduino sensor nodes, ADC calibration, I2C/SPI/UART telemetry.
-- **AICTE** (Remote, May 2023 – Jul 2023): Cloud Infrastructure & MLOps Intern. AWS S3/Lambda serverless data ingestion pipelines (~99.9% uptime), Amazon SageMaker model deployment.
+## Primary Roles & Field Operations
+- **Wakefit Innovations Ltd** (Bengaluru & Bommasandra Manufacturing Facility, Aug 2026 – Present): Systems & Automation Engineering Intern (Intern-PGET). Embedded on-site into high-throughput manufacturing operations to diagnose and resolve systemic bottlenecks between physical floor teams and enterprise cataloging databases.
+  - Finished Goods & BOM Schema Transformation Engine (Live: https://npl-automation.pages.dev/): recursive validation executing in <50ms with 100% data privacy.
+  - Batch Asset Ingestion Engine (Live: https://image-sequence-renamer.pages.dev/): reduced asset onboarding latency by >80% with zero server compute overhead.
+  - Deterministic Repair Cost Engine (Live: https://kshitijsawarkar.github.io/Wakefit_Repair_Calculator/): defensive pricing constraints to eliminate margin loss from human calculation drift.
+- **MNNIT Allahabad** (Prayagraj, Aug 2025 – Present): Graduate Teaching Assistant in Control Systems & Instrumentation. Led hands-on laboratory sessions and tutorials for 100+ undergraduate engineering students. Guided students in closed-loop state feedback design, mathematical stability analysis, benchtop sensor troubleshooting, and Hardware-in-the-Loop (HIL) calibration rigs.
+- **Sharon Innovations (RCOEM TBI Foundation)** (Nagpur, Dec 2023 – Feb 2024): IoT & Embedded Systems Intern. Integrated physical ESP32 and Arduino Uno sensor nodes with wireless environmental telemetry, calibrated ADC conversions, debugged I2C/SPI/UART protocols.
+- **AICTE** (Remote, May 2023 – Jul 2023): Cloud Infrastructure & MLOps Intern. Event-driven serverless data ingestion pipelines using AWS S3/Lambda (~99.9% uptime), Amazon SageMaker model deployment.
 
-## Peer-Reviewed Publication
-- **IEEE Xplore (Doc ID: 10627276, Mar 2026)**: "Automated Edge Vision & Retail Checkout System" - Lead Author. INT8 Post-Training Quantization via ONNX Runtime for custom YOLOv5 on Raspberry Pi (<1% mAP loss, 24.6ms sub-second inference).
-
-## Sovereign Ventures
-- **cardsfinders.com**: Founder & Full-Stack Edge Systems Architect. Cloudflare Pages/Workers, sub-second TTFB, zero server runtime compute costs.
+## Peer-Reviewed Research & Physical Robotics Artifacts
+- **IEEE Xplore (Document ID: 10627276, Mar 2026)**: "Automated Edge Vision & Retail Checkout System using Quantized YOLOv5 on Embedded Hardware" - Lead Author. INT8 Post-Training Quantization via ONNX Runtime to balance activation dynamic ranges on ARM/Raspberry Pi hardware (<1% mAP degradation, sub-second 24.6ms inference).
+- **HiWonder MentorPi M1 Autonomous Mobile Robot (ROS2)**: Raspberry Pi 5 under ROS2. Assembled chassis, flashed real-time system images, configured battery management, integrated monocular camera vision pipelines for autonomous SLAM navigation and obstacle avoidance.
+- **Sensorless Solar Photovoltaic Tracking System**: Closed-loop tracking mechanism utilizing photovoltaic output voltage of solar panels to detect light intensity, eliminating fragile external sensors (LDRs) and reducing physical failure points.
+- **cardsfinders.com**: Founder & Full-Stack Edge Systems Architect. Cloudflare Pages/Workers, sub-second TTFB, zero server runtime compute overhead.
 - **myuselessweb.com**: Creator & Edge Infrastructure Engineer. High-traffic interactive web platform deployed over Cloudflare edge (<50ms global latency).
 
-## 4-Pillar Systems Taxonomy
-1. **Applied AI & Edge Vision**: YOLOv5, OpenCV, INT8 Quantization, ONNX Runtime, Raspberry Pi, ROS2
-2. **Autonomous Agent Systems**: Agent State Machines, Model Context Protocol (MCP), LLM Failover Routing, Pydantic v2 Guardrails
-3. **Systems Automation & Edge Web**: Cloudflare Pages/Workers, Astro.js, Sub-50ms Schema Engines, Python, TypeScript
-4. **Control & Instrumentation**: Closed-Loop State Feedback, State-Space Modeling, HIL Testing, MATLAB/Simulink
+## 4 Core FDE Systems Skill Pillars
+1. **Field Commissioning & Robotics Integration**: Robot Operating System 2 (ROS2), Embedded Linux, AMRs/AGVs, Sensor Fusion, Microcontrollers (ESP32, ARM), Hardware-in-the-Loop (HIL) Validation
+2. **Edge AI & Computer Vision**: YOLOv5, OpenCV, Post-Training Quantization (INT8), ONNX Runtime, Raspberry Pi 5, Low-Latency Inference
+3. **Customer Systems Integration & Automation**: Deterministic Schema Engines, Sub-50ms Edge Validation, REST APIs, Cloudflare Pages/Workers, Pydantic v2, Python, TypeScript
+4. **Closed-Loop Control Theory**: State-Space Modeling, Closed-Loop Feedback Stability, Root Locus, Transfer Functions, MATLAB/Simulink
