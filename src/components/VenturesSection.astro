@@ -1,0 +1,191 @@
+---
+export interface Venture {
+  name: string;
+  url: string;
+  role: string;
+  period: string;
+  tagline: string;
+  description: string[];
+  metrics: { label: string; value: string }[];
+  tags: string[];
+}
+
+const ventures: Venture[] = [
+  {
+    name: "cardsfinders.com",
+    url: "https://cardsfinders.com",
+    role: "Founder & Full-Stack Edge Systems Architect",
+    period: "Jul 2026 – Present",
+    tagline: "Sovereign Financial Tools & Comparison Platform",
+    description: [
+      "Conceived, architected, and deployed a financial tools comparison platform hosted globally via Cloudflare Pages and Workers.",
+      "Engineered custom edge DNS configurations, Cloudflare email routing rules, and sub-second Time-to-First-Byte (TTFB) asset delivery pipelines.",
+      "Implemented responsive client-side UI with modern SEO architectures, achieving top-tier Core Web Vitals and zero server runtime compute costs."
+    ],
+    metrics: [
+      { label: "Architecture", value: "Global Edge" },
+      { label: "Delivery", value: "<100ms TTFB" },
+      { label: "Server Compute", value: "Zero Runtime Cost" },
+      { label: "Core Web Vitals", value: "Top Tier" }
+    ],
+    tags: ["Cloudflare Pages", "Cloudflare Workers", "Edge DNS", "Serverless", "Modern SEO", "Core Web Vitals"]
+  },
+  {
+    name: "myuselessweb.com",
+    url: "https://myuselessweb.com",
+    role: "Creator & Edge Infrastructure Engineer",
+    period: "Jan 2024 – Present",
+    tagline: "High-Traffic Interactive Web Discovery Platform",
+    description: [
+      "Built and deployed an ultra-minimalist, high-traffic interactive web discovery platform deployed over Cloudflare edge infrastructure.",
+      "Optimized DOM rendering cycles and assets to guarantee near-instantaneous global edge delivery (<50ms) across all devices."
+    ],
+    metrics: [
+      { label: "Latency", value: "<50ms Global" },
+      { label: "Style", value: "Ultra-Minimalist" },
+      { label: "Traffic Tier", value: "High-Volume Edge" }
+    ],
+    tags: ["Edge Infrastructure", "Ultra-Low Latency", "DOM Optimization", "Interactive Web", "Global CDN"]
+  }
+];
+
+const liveTools = [
+  {
+    name: "NPL Schema Transformation Engine",
+    url: "https://npl-automation.pages.dev",
+    description: "Automated recursive validation & BOM reconciliation pipeline running in sub-50ms with 100% client-side data privacy.",
+    badge: "Industrial Automation"
+  },
+  {
+    name: "Batch Asset Ingestion Engine",
+    url: "https://image-sequence-renamer.pages.dev",
+    description: "In-browser media asset normalizer and sequence renamer, cutting onboarding latency by >80% with zero server compute overhead.",
+    badge: "Edge Media Processing"
+  }
+];
+---
+
+<section id="ventures" class="py-16 md:py-24 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-violet-deep/60 border border-violet-brand/40 text-xs font-mono text-lime-neon mb-3">
+        <span class="w-2 h-2 rounded-full bg-lime-neon"></span>
+        SOVEREIGN_VENTURES & EDGE_SYSTEMS
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-display">
+        Sovereign Ventures & Distributed Properties
+      </h2>
+      <p class="text-midnight-200 mt-2 max-w-2xl text-base">
+        Independently founded web architectures and edge deployments designed for maximum scalability, instantaneous TTFB, and zero runtime infrastructure overhead.
+      </p>
+    </div>
+
+    <!-- Main Ventures -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      {ventures.map(v => (
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-midnight-600/70 hover:border-lime-neon/50 transition-all duration-300 relative group overflow-hidden shadow-card-glow hover:shadow-glow-lime flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-violet-deep border border-violet-brand/50 text-lime-neon">
+                {v.tagline}
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                {v.period}
+              </span>
+            </div>
+
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-2xl font-bold text-white group-hover:text-lime-neon transition-colors">
+                {v.name}
+              </h3>
+              <a
+                href={v.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs font-mono text-lime-neon hover:underline"
+              >
+                <span>Live Site</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <p class="text-xs font-mono text-violet-300 mb-5">
+              {v.role}
+            </p>
+
+            <ul class="space-y-2 mb-6">
+              {v.description.map(desc => (
+                <li class="flex items-start gap-2 text-sm text-slate-300 leading-relaxed">
+                  <span class="w-1.5 h-1.5 rounded-full bg-lime-neon mt-2 shrink-0"></span>
+                  <span>{desc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <!-- Metrics Bar -->
+            <div class="grid grid-cols-2 gap-2 p-3 rounded-xl bg-midnight-900/90 border border-midnight-700 mb-5">
+              {v.metrics.map(m => (
+                <div class="text-xs font-mono">
+                  <span class="text-slate-400 block text-[10px] uppercase">{m.label}</span>
+                  <span class="text-lime-neon font-bold">{m.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 pt-3 border-t border-midnight-600/50">
+              {v.tags.map(tag => (
+                <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-midnight-900/70 border border-midnight-700 text-slate-300">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Live Utility Engines -->
+    <div class="p-6 rounded-2xl glass-panel border border-violet-brand/40">
+      <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-lime-neon"></span>
+        Live Client-Side Manufacturing & Media Processing Deployments
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {liveTools.map(tool => (
+          <a
+            href={tool.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-4 rounded-xl bg-midnight-900/80 border border-midnight-700 hover:border-lime-neon transition-all flex flex-col justify-between group"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-white group-hover:text-lime-neon text-base transition-colors">
+                  {tool.name}
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-violet-deep text-violet-300 border border-violet-brand/40">
+                  {tool.badge}
+                </span>
+              </div>
+              <p class="text-xs text-midnight-200 leading-relaxed">
+                {tool.description}
+              </p>
+            </div>
+            <div class="mt-3 text-xs font-mono text-lime-neon flex items-center gap-1">
+              <span>{tool.url.replace('https://', '')}</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

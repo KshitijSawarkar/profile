@@ -1,0 +1,26 @@
+---
+---
+
+<!-- Global Toast Notification Container -->
+<div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-midnight-800/95 border border-lime-neon/40 shadow-glow-lime backdrop-blur-md text-xs font-mono text-white">
+  <span class="w-2 h-2 rounded-full bg-lime-neon animate-ping"></span>
+  <span id="toast-message">Copied to clipboard!</span>
+</div>
+
+<script>
+  // Global Toast function
+  (window as any).showToast = function(message = "Copied to clipboard!") {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    if (!toast || !toastMsg) return;
+
+    toastMsg.textContent = message;
+    toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+    }, 2400);
+  };
+</script>

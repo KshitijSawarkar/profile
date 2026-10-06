@@ -1,0 +1,157 @@
+---
+export interface ProjectItem {
+  title: string;
+  badge: string;
+  badgeColor: string;
+  role: string;
+  date: string;
+  docId?: string;
+  liveUrl?: string;
+  description: string;
+  metrics: string[];
+  techStack: string[];
+}
+
+const projects: ProjectItem[] = [
+  {
+    title: "Automated Edge Vision & Retail Checkout System",
+    badge: "IEEE Xplore Published Lead Author",
+    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
+    role: "Lead Author & Edge AI Architect",
+    date: "Published Mar 2026",
+    docId: "IEEE Doc ID: 10627276",
+    description: "Architected and deployed an automated item detection and billing pipeline using custom YOLOv5 models on physical ARM-based Raspberry Pi hardware. Implemented Post-Training Quantization (INT8) via ONNX Runtime to balance activation scales, preserving <1% mAP loss while achieving sub-second inference in constrained retail environments without cloud GPUs.",
+    metrics: [
+      "<1% mAP loss with INT8 Quantization",
+      "Sub-second ARM edge inference (24.6ms)",
+      "Zero reliance on cloud GPUs"
+    ],
+    techStack: ["IEEE Xplore", "YOLOv5", "ONNX Runtime", "INT8 Quantization", "Raspberry Pi", "ARM Edge Deployment"]
+  },
+  {
+    title: "Wakefit Schema Transformation & Media Asset Engines",
+    badge: "Operational Manufacturing Deployment",
+    badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
+    role: "Forward Deployed Systems Engineer",
+    date: "Aug 2026 – Present",
+    liveUrl: "https://npl-automation.pages.dev",
+    description: "Built and deployed custom client-side Finished Goods (FG) & BOM schema transformation engines directly for factory floor and NPL teams. Converted multi-day spreadsheet reconciliation into an automated recursive validation pipeline executing in sub-50ms with 100% client-side privacy, eliminating operational human error and asset onboarding lag.",
+    metrics: [
+      "Sub-50ms recursive validation pipeline",
+      ">80% reduction in media onboarding latency",
+      "100% client-side privacy & zero server cost"
+    ],
+    techStack: ["Edge Systems", "Cloudflare Pages", "Schema Automation", "Client-Side Processing", "BOM Normalization"]
+  },
+  {
+    title: "HiWonder MentorPi M1 Autonomous Mobile Robot (ROS2)",
+    badge: "Autonomous Mobile Robotics Deployment",
+    badgeColor: "bg-pink-neon/15 text-pink-neon border-pink-neon/40",
+    role: "Robotics & Autonomous Systems Engineer",
+    date: "Jul 2026",
+    description: "Assembled, flashed, and configured the HiWonder MentorPi M1 mobile robot running on a Raspberry Pi 5 under Robot Operating System 2 (ROS2). Integrated monocular camera vision perception, battery power management, and SLAM navigation algorithms for autonomous indoor path planning.",
+    metrics: [
+      "Full ROS2 stack on Raspberry Pi 5",
+      "SLAM indoor mapping & autonomous path planning",
+      "Real-time monocular vision perception"
+    ],
+    techStack: ["ROS2", "Raspberry Pi 5", "SLAM Navigation", "Mobile Robotics", "Computer Vision"]
+  },
+  {
+    title: "Sensorless Solar Photovoltaic Tracking System",
+    badge: "Autonomous Control Systems",
+    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
+    role: "Hardware & Control Systems Designer",
+    date: "Mar 2026",
+    description: "Invented a closed-loop solar tracking mechanism using the photovoltaic output voltage of the solar panels themselves to detect light gradients, completely eliminating external light-dependent resistors (LDRs). Programmed microcontroller actuation algorithms driving servo motors toward peak power points.",
+    metrics: [
+      "Completely eliminated external LDR sensors",
+      "Direct differential PV gradient sensing",
+      "Closed-loop servo actuation toward peak yield"
+    ],
+    techStack: ["Microcontroller C++", "Closed-Loop Control", "Photovoltaic Physics", "Servo Actuation"]
+  }
+];
+---
+
+<section id="projects" class="py-16 md:py-20 border-t border-midnight-600/50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
+        02 / DEPLOYMENTS & APPLIED RESEARCH
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+        Featured Systems & Deployments
+      </h2>
+      <p class="text-slate-400 mt-2 text-base">
+        Selected real-world deployments across Edge AI quantization, manufacturing floor automation, and mobile robotics.
+      </p>
+    </div>
+
+    <!-- 2x2 Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map(proj => (
+        <div class="glass-panel p-6 sm:p-7 rounded-2xl border border-midnight-600/80 hover:border-violet-brand/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span class={`px-2.5 py-0.5 rounded text-xs font-mono font-semibold border ${proj.badgeColor}`}>
+                {proj.badge}
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                {proj.date}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-lime-neon transition-colors mb-1.5">
+              {proj.title}
+            </h3>
+
+            {proj.docId && (
+              <div class="text-xs font-mono text-lime-neon mb-3">
+                {proj.docId}
+              </div>
+            )}
+
+            {proj.liveUrl && (
+              <a
+                href={proj.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs font-mono text-lime-neon hover:underline mb-3"
+              >
+                <span>Live Deployment: {proj.liveUrl.replace('https://', '')}</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+
+            <p class="text-sm text-slate-300 leading-relaxed mb-5">
+              {proj.description}
+            </p>
+
+            <!-- Metrics -->
+            <div class="space-y-1.5 mb-6 p-3.5 rounded-xl bg-midnight-900/80 border border-midnight-700 font-mono text-xs">
+              {proj.metrics.map(metric => (
+                <div class="flex items-center gap-2 text-slate-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-lime-neon shrink-0"></span>
+                  <span>{metric}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-midnight-600/50">
+            {proj.techStack.map(tag => (
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/60 border border-midnight-700 text-slate-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+const skillGroups = [
+  {
+    title: "Field AI & Edge Deployment",
+    skills: [
+      "YOLOv5 Edge Deployment",
+      "INT8 ONNX Quantization",
+      "ARM Edge (Raspberry Pi 5)",
+      "Monocular Computer Vision",
+      "Model Optimization (<1% mAP loss)",
+      "OpenCV Pipelines",
+      "Amazon SageMaker MLOps"
+    ]
+  },
+  {
+    title: "Hardware, Control & Robotics",
+    skills: [
+      "Closed-Loop State Feedback",
+      "Hardware-in-the-Loop (HIL)",
+      "ROS2 & SLAM Navigation",
+      "ESP32 & Arduino Hardware",
+      "I2C / SPI / UART Bus Protocols",
+      "ADC Sensor Interfacing",
+      "Mathematical Stability Analysis"
+    ]
+  },
+  {
+    title: "Operational Tooling & Systems",
+    skills: [
+      "Sub-50ms Client-Side Engines",
+      "BOM & Schema Transformation",
+      "Zero-Compute Cloudflare Edge",
+      "AWS Lambda & S3 Pipelines",
+      "Multi-Agent Failover Routing",
+      "Python, C++, TypeScript",
+      "Astro & Modern Web"
+    ]
+  }
+];
+---
+
+<section id="skills" class="py-16 md:py-20 border-t border-midnight-600/50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
+        04 / FORWARD DEPLOYED TOOLKIT
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+        Technical & Deployment Capabilities
+      </h2>
+      <p class="text-slate-400 mt-2 text-base">
+        A pragmatic engineering stack for bridging physical hardware, edge machine learning, and enterprise operational systems.
+      </p>
+    </div>
+
+    <!-- 3-Column Clean Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {skillGroups.map(group => (
+        <div class="glass-panel p-6 rounded-2xl border border-midnight-600/80">
+          <h3 class="text-base font-bold text-white mb-4 pb-2 border-b border-midnight-700">
+            {group.title}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {group.skills.map(skill => (
+              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-200">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

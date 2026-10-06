@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Kshitij Sawarkar | Forward Deployed Engineer (AI, Systems & Hardware)",
+  description = "Forward Deployed Systems & Automation Engineer — M.Tech Control & Instrumentation (MNNIT Allahabad), Systems Intern at Wakefit, IEEE Published Lead Author. Specializing in on-the-ground deployments, edge AI quantization, and operational automation."
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body class="bg-midnight-900 text-slate-100 min-h-screen bg-grid-pattern relative selection:bg-lime-neon selection:text-midnight-950">
+    <div class="fixed inset-0 bg-radial-glow pointer-events-none z-0"></div>
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+  </body>
+</html>

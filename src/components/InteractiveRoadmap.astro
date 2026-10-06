@@ -1,0 +1,661 @@
+---
+export interface RoadmapStation {
+  id: number;
+  year: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  role: string;
+  location: string;
+  highlight: string;
+  bulletPoints: string[];
+  techPills: string[];
+  logo?: string;
+  iconType: string;
+  // Coordinates for the SVG road curve (percentage on canvas)
+  x: number; // percentage 0-100
+  y: number; // percentage 0-100
+  carAngle: number; // rotation in degrees for the car when parked here
+}
+
+const stations: RoadmapStation[] = [
+  {
+    id: 1,
+    year: "2020 – 2024",
+    title: "B.Tech in ECE",
+    subtitle: "Shri Ramdeobaba College of Engg & Mgmt (RCOEM)",
+    category: "Academic Foundation",
+    role: "Undergraduate Scholar",
+    location: "Nagpur, India",
+    logo: "/images/rcoem-logo.png",
+    iconType: "academic",
+    highlight: "Graduated with core specialization in Embedded Systems, Signal Processing, and Microcontrollers.",
+    bulletPoints: [
+      "Mastered embedded architectures, microcontrollers, and hardware-software interfacing.",
+      "Developed physical hardware prototypes with I2C, SPI, and UART communication protocols."
+    ],
+    techPills: ["Embedded C++", "Microcontrollers", "Signal Processing", "RCOEM Nagpur"],
+    x: 10,
+    y: 80,
+    carAngle: -15
+  },
+  {
+    id: 2,
+    year: "Jun – Jul 2022",
+    title: "Network Infrastructure",
+    subtitle: "UCN Cable Network Pvt Ltd",
+    category: "Field Operations",
+    role: "Network Infrastructure & Hardware Intern",
+    location: "Nagpur, India",
+    iconType: "telecom",
+    highlight: "First field engineering role managing optical distribution frames and metropolitan hybrid fiber-coaxial (HFC) networks.",
+    bulletPoints: [
+      "Configured managed Ethernet switches, routers, and cable headend distribution equipment.",
+      "Conducted physical Signal-to-Noise Ratio (SNR) audits across metro networks."
+    ],
+    techPills: ["Optical Distribution", "HFC Networks", "SNR Auditing", "Managed Switches"],
+    x: 23,
+    y: 42,
+    carAngle: 25
+  },
+  {
+    id: 3,
+    year: "May – Jul 2023",
+    title: "AWS Cloud & MLOps",
+    subtitle: "All India Council for Technical Education (AICTE)",
+    category: "Cloud Architecture",
+    role: "Cloud Infrastructure & MLOps Intern",
+    location: "Remote, India",
+    iconType: "cloud",
+    highlight: "Architected event-driven serverless ML ingestion pipelines on AWS achieving ~99.9% uptime.",
+    bulletPoints: [
+      "Built serverless event ingestion using AWS S3 bucket triggers and AWS Lambda functions.",
+      "Deployed and optimized Amazon SageMaker machine learning model endpoints."
+    ],
+    techPills: ["AWS Lambda", "Amazon SageMaker", "AWS S3", "Serverless ML"],
+    x: 38,
+    y: 78,
+    carAngle: -20
+  },
+  {
+    id: 4,
+    year: "Dec 2023 – Feb 2024",
+    title: "IoT & Sensor Nodes",
+    subtitle: "Sharon Innovations (RCOEM TBI)",
+    category: "Embedded Deployment",
+    role: "IoT & Embedded Systems Intern",
+    location: "Nagpur, India",
+    logo: "/images/rcoem-logo.png",
+    iconType: "iot",
+    highlight: "Engineered physical ESP32 and Arduino sensor nodes with wireless environmental telemetry.",
+    bulletPoints: [
+      "Calibrated analog-to-digital (ADC) sensor conversions for real-time telemetry.",
+      "Debugged bus communication protocols for multi-sensor hardware prototypes."
+    ],
+    techPills: ["ESP32", "Arduino Uno", "Sensor Calibration", "Wireless Telemetry"],
+    x: 54,
+    y: 35,
+    carAngle: 15
+  },
+  {
+    id: 5,
+    year: "Aug 2025 – 2027",
+    title: "M.Tech C&I & GTA",
+    subtitle: "MNNIT Allahabad",
+    category: "Postgraduate & Teaching",
+    role: "M.Tech Scholar & Graduate Teaching Assistant",
+    location: "Prayagraj, India",
+    logo: "/images/mnnit-logo.png",
+    iconType: "academic",
+    highlight: "Appointed Graduate Teaching Assistant for 100+ students in Control Systems & Instrumentation.",
+    bulletPoints: [
+      "Mentored students on state-space modeling, root locus analysis, and closed-loop stability.",
+      "Conducting research on Hardware-in-the-Loop (HIL) calibration and advanced control theory."
+    ],
+    techPills: ["MNNIT Allahabad", "Control Systems", "HIL Calibration", "GTA Faculty"],
+    x: 69,
+    y: 75,
+    carAngle: -30
+  },
+  {
+    id: 6,
+    year: "Mar 2026",
+    title: "IEEE Xplore Publication",
+    subtitle: "IEEE Doc ID: 10627276",
+    category: "Peer-Reviewed Research",
+    role: "Published Lead Author",
+    location: "Global IEEE Index",
+    iconType: "ieee",
+    highlight: "Published lead author on INT8 Edge AI Model Quantization on ARM-based Raspberry Pi hardware with <1% mAP loss.",
+    bulletPoints: [
+      "Quantized custom YOLOv5 models via ONNX Runtime for sub-second edge retail inference (24.6ms).",
+      "Eliminated reliance on expensive cloud GPUs for constrained hardware environments."
+    ],
+    techPills: ["IEEE Xplore", "YOLOv5 INT8", "ONNX Runtime", "ARM Edge AI"],
+    x: 83,
+    y: 38,
+    carAngle: 10
+  },
+  {
+    id: 7,
+    year: "Aug 2026 – Present",
+    title: "Forward Deployed Systems",
+    subtitle: "Wakefit Innovations Ltd",
+    category: "Active Industrial Role",
+    role: "Forward Deployed Systems & Automation Intern",
+    location: "Bengaluru, India",
+    iconType: "fde",
+    highlight: "Embedded on-site into manufacturing operations to deploy sub-50ms client-side schema transformation engines.",
+    bulletPoints: [
+      "Converted multi-day manual spreadsheet reconciliation into automated recursive validation engines with 100% data privacy.",
+      "Cut media onboarding latency by >80% with zero-compute in-browser batch processing."
+    ],
+    techPills: ["Forward Deployed", "Wakefit Systems", "Sub-50ms Engines", "Zero-Compute"],
+    x: 94,
+    y: 65,
+    carAngle: 0
+  }
+];
+---
+
+<section id="journey-roadmap" class="py-16 md:py-24 border-t border-midnight-600/50 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-neon/15 text-lime-neon border border-lime-neon/30 text-xs font-mono mb-2">
+          <span class="w-2 h-2 rounded-full bg-lime-neon animate-ping"></span>
+          <span>INTERACTIVE JOURNEY HIGHWAY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+          From B.Tech to Forward Deployed Engineer
+        </h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base max-w-2xl">
+          Move your cursor across the destinations on the road — watch the car drive in real-time to inspect each career milestone.
+        </p>
+      </div>
+
+      <!-- Controls: Tour mode / station indicator -->
+      <div class="flex items-center gap-3 font-mono text-xs">
+        <button
+          id="btn-auto-tour"
+          class="px-3.5 py-1.5 rounded-lg bg-midnight-800 hover:bg-violet-deep border border-violet-brand/50 text-lime-neon transition-all flex items-center gap-1.5"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span id="tour-btn-text">Auto Drive Tour</span>
+        </button>
+        <div class="px-3 py-1.5 rounded-lg bg-midnight-900 border border-midnight-700 text-slate-300">
+          Station <span id="active-station-num" class="text-lime-neon font-bold">1</span> / 7
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Road Highway Canvas Container -->
+    <div class="relative w-full rounded-3xl bg-midnight-950 border border-midnight-700/80 p-4 sm:p-8 shadow-card-glow overflow-hidden mb-8">
+      <!-- Background Highway Glow Grid -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+
+      <!-- Road SVG Track Layer -->
+      <div class="relative w-full h-[320px] sm:h-[400px]">
+        <svg
+          class="w-full h-full absolute inset-0 overflow-visible"
+          viewBox="0 0 1000 400"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <!-- Road Asphalt Gradient -->
+            <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#150f23" />
+              <stop offset="50%" stop-color="#1f1633" />
+              <stop offset="100%" stop-color="#150f23" />
+            </linearGradient>
+
+            <!-- Glow Filters -->
+            <filter id="neonLimeGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Outer Road Bed with Glow -->
+          <path
+            d="M 60,320 C 180,320 180,160 260,160 C 340,160 340,320 420,320 C 500,320 500,140 580,140 C 660,140 660,310 740,310 C 820,310 820,150 880,150 C 940,150 940,260 970,260"
+            fill="none"
+            stroke="#2a1f45"
+            stroke-width="56"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <!-- Main Road Asphalt Base -->
+          <path
+            d="M 60,320 C 180,320 180,160 260,160 C 340,160 340,320 420,320 C 500,320 500,140 580,140 C 660,140 660,310 740,310 C 820,310 820,150 880,150 C 940,150 940,260 970,260"
+            fill="none"
+            stroke="#150f23"
+            stroke-width="44"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <!-- Road Shoulder Neon Glowing Lines -->
+          <path
+            d="M 60,320 C 180,320 180,160 260,160 C 340,160 340,320 420,320 C 500,320 500,140 580,140 C 660,140 660,310 740,310 C 820,310 820,150 880,150 C 940,150 940,260 970,260"
+            fill="none"
+            stroke="#6a5fc1"
+            stroke-width="46"
+            stroke-opacity="0.3"
+            stroke-linecap="round"
+          />
+
+          <!-- Road Center Dashed Highway Line -->
+          <path
+            d="M 60,320 C 180,320 180,160 260,160 C 340,160 340,320 420,320 C 500,320 500,140 580,140 C 660,140 660,310 740,310 C 820,310 820,150 880,150 C 940,150 940,260 970,260"
+            fill="none"
+            stroke="#c2ef4e"
+            stroke-width="3"
+            stroke-dasharray="14,14"
+            stroke-linecap="round"
+            filter="url(#neonLimeGlow)"
+          />
+        </svg>
+
+        <!-- Interactive Station Milestone Stop Pins -->
+        {stations.map((st) => (
+          <div
+            class="station-pin absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20 transition-transform duration-300 hover:scale-110"
+            style={`left: ${st.x}%; top: ${st.y}%;`}
+            data-id={st.id}
+            data-x={st.x}
+            data-y={st.y}
+            data-angle={st.carAngle}
+          >
+            <!-- Pin Glow Ring -->
+            <div class={`pin-ring w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
+              st.id === 1
+                ? 'border-lime-neon bg-midnight-900 shadow-glow-lime scale-110'
+                : 'border-violet-brand/70 bg-midnight-900/90 hover:border-lime-neon'
+            }`}>
+              <!-- Logo or Step Number -->
+              {st.logo ? (
+                <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${st.logo}`} alt={st.title} class="w-5 h-5 object-contain rounded" />
+              ) : (
+                <span class="font-mono font-bold text-xs text-white">{st.id}</span>
+              )}
+            </div>
+
+            <!-- Floating Label Tooltip on Road -->
+            <div class="absolute top-12 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none flex flex-col items-center">
+              <span class="px-2 py-0.5 rounded bg-midnight-900/95 border border-midnight-700 text-[10px] font-mono text-lime-neon font-bold shadow-md">
+                {st.year}
+              </span>
+              <span class="text-[11px] font-bold text-white tracking-tight mt-0.5 drop-shadow">
+                {st.title}
+              </span>
+            </div>
+          </div>
+        ))}
+
+        <!-- THE ANIMATED CAR / CYBER-ROVER -->
+        <div
+          id="animated-car"
+          class="absolute z-30 pointer-events-none transition-all duration-700 ease-out -translate-x-1/2 -translate-y-1/2"
+          style="left: 10%; top: 80%; transform: translate(-50%, -50%) rotate(-15deg);"
+        >
+          <!-- Cyber Rover Car Body -->
+          <div class="relative w-14 h-8 flex items-center justify-center">
+            <!-- Neon Underglow -->
+            <div class="absolute inset-0 bg-lime-neon rounded-full blur-md opacity-80 animate-pulse"></div>
+
+            <!-- Car Vector SVG -->
+            <svg class="w-full h-full relative z-10 drop-shadow-2xl" viewBox="0 0 64 36" fill="none">
+              <!-- Shadow -->
+              <ellipse cx="32" cy="30" rx="26" ry="4" fill="rgba(0,0,0,0.6)" />
+              
+              <!-- Wheels -->
+              <rect x="8" y="24" width="10" height="8" rx="3" fill="#0d0915" stroke="#c2ef4e" stroke-width="1.5" />
+              <rect x="46" y="24" width="10" height="8" rx="3" fill="#0d0915" stroke="#c2ef4e" stroke-width="1.5" />
+              
+              <!-- Main Chassis -->
+              <path d="M 4,22 L 14,14 L 26,10 L 46,10 L 58,16 L 62,24 L 54,26 L 10,26 Z" fill="#1f1633" stroke="#6a5fc1" stroke-width="2" />
+              
+              <!-- Cockpit / Glass Canopy -->
+              <path d="M 22,12 L 30,6 L 44,6 L 50,12 Z" fill="#c2ef4e" fill-opacity="0.85" />
+              
+              <!-- Headlights Beam Glow -->
+              <polygon points="58,18 78,12 78,26 58,22" fill="url(#headlightGrad)" opacity="0.6" />
+              <circle cx="58" cy="20" r="2.5" fill="#ffffff" />
+            </svg>
+
+            <!-- Headlight Beam Gradient definition -->
+            <svg class="absolute w-0 h-0">
+              <defs>
+                <linearGradient id="headlightGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+                  <stop offset="0%" stop-color="#c2ef4e" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#c2ef4e" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Station Interactive Detail Card -->
+    <div id="station-details-card" class="glass-panel p-6 sm:p-8 rounded-2xl border border-lime-neon/40 shadow-card-glow relative overflow-hidden transition-all duration-300">
+      <!-- Subtle Background Ambient -->
+      <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-lime-neon/15 via-violet-brand/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+        <!-- Station Meta -->
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2.5 mb-2">
+            <span id="card-station-tag" class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-lime-neon text-midnight-950 shadow-sm">
+              Station 1 of 7
+            </span>
+            <span id="card-category" class="text-xs font-mono text-violet-300 px-2 py-0.5 rounded bg-midnight-900 border border-violet-brand/40">
+              Academic Foundation
+            </span>
+            <span id="card-year" class="text-xs font-mono text-slate-400">
+              2020 – 2024
+            </span>
+          </div>
+
+          <h3 id="card-title" class="text-2xl sm:text-3xl font-extrabold text-white font-display mb-1">
+            B.Tech in Electronics & Communication Engineering
+          </h3>
+          <p id="card-subtitle" class="text-base text-lime-neon font-medium mb-3">
+            Shri Ramdeobaba College of Engineering and Management (RCOEM) &bull; Nagpur
+          </p>
+
+          <p id="card-highlight" class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+            Graduated with core specialization in Embedded Systems, Signal Processing, and Microcontrollers.
+          </p>
+
+          <!-- Bullet Points -->
+          <ul id="card-bullets" class="space-y-2 mb-5">
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-neon mt-2 shrink-0"></span>
+              <span>Mastered embedded architectures, microcontrollers, and hardware-software interfacing.</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-neon mt-2 shrink-0"></span>
+              <span>Developed physical hardware prototypes with I2C, SPI, and UART communication protocols.</span>
+            </li>
+          </ul>
+
+          <!-- Tech Pills -->
+          <div id="card-pills" class="flex flex-wrap gap-1.5 pt-4 border-t border-midnight-600/50">
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-300">Embedded C++</span>
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-300">Microcontrollers</span>
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-300">Signal Processing</span>
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-300">RCOEM Nagpur</span>
+          </div>
+        </div>
+
+        <!-- Quick Switcher Navigation Buttons -->
+        <div class="flex lg:flex-col gap-2 shrink-0 justify-end">
+          <button
+            id="btn-prev-station"
+            class="px-4 py-2.5 rounded-xl bg-midnight-900 hover:bg-midnight-800 border border-midnight-700 text-xs font-mono text-slate-300 hover:text-white transition-all flex items-center gap-1.5"
+          >
+            <span>&larr; Prev Stop</span>
+          </button>
+          <button
+            id="btn-next-station"
+            class="px-4 py-2.5 rounded-xl bg-violet-deep hover:bg-violet-brand border border-violet-brand text-xs font-mono font-bold text-lime-neon hover:text-white transition-all flex items-center gap-1.5"
+          >
+            <span>Next Stop &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const stationsData = [
+    {
+      id: 1,
+      year: "2020 – 2024",
+      title: "B.Tech in Electronics & Communication Engineering",
+      subtitle: "Shri Ramdeobaba College of Engg & Mgmt (RCOEM) • Nagpur",
+      category: "Academic Foundation",
+      highlight: "Graduated with core specialization in Embedded Systems, Signal Processing, and Microcontrollers.",
+      bulletPoints: [
+        "Mastered embedded architectures, microcontrollers, and hardware-software interfacing.",
+        "Developed physical hardware prototypes with I2C, SPI, and UART communication protocols."
+      ],
+      techPills: ["Embedded C++", "Microcontrollers", "Signal Processing", "RCOEM Nagpur"],
+      x: 10,
+      y: 80,
+      carAngle: -15
+    },
+    {
+      id: 2,
+      year: "Jun – Jul 2022",
+      title: "Network Infrastructure & Hardware Intern",
+      subtitle: "UCN Cable Network Pvt Ltd • Nagpur",
+      category: "Field Operations",
+      highlight: "First field engineering role managing optical distribution frames and metropolitan hybrid fiber-coaxial (HFC) networks.",
+      bulletPoints: [
+        "Configured managed Ethernet switches, routers, and cable headend distribution equipment.",
+        "Conducted physical Signal-to-Noise Ratio (SNR) audits across metro networks."
+      ],
+      techPills: ["Optical Distribution", "HFC Networks", "SNR Auditing", "Managed Switches"],
+      x: 23,
+      y: 42,
+      carAngle: 25
+    },
+    {
+      id: 3,
+      year: "May – Jul 2023",
+      title: "Cloud Infrastructure & MLOps Intern",
+      subtitle: "All India Council for Technical Education (AICTE) • Remote",
+      category: "Cloud Architecture",
+      highlight: "Architected event-driven serverless ML ingestion pipelines on AWS achieving ~99.9% uptime.",
+      bulletPoints: [
+        "Built serverless event ingestion using AWS S3 bucket triggers and AWS Lambda functions.",
+        "Deployed and optimized Amazon SageMaker machine learning model endpoints."
+      ],
+      techPills: ["AWS Lambda", "Amazon SageMaker", "AWS S3", "Serverless ML"],
+      x: 38,
+      y: 78,
+      carAngle: -20
+    },
+    {
+      id: 4,
+      year: "Dec 2023 – Feb 2024",
+      title: "IoT & Embedded Systems Deployment Intern",
+      subtitle: "Sharon Innovations (RCOEM TBI) • Nagpur",
+      category: "Embedded Deployment",
+      highlight: "Engineered physical ESP32 and Arduino sensor nodes with wireless environmental telemetry.",
+      bulletPoints: [
+        "Calibrated analog-to-digital (ADC) sensor conversions for real-time telemetry.",
+        "Debugged bus communication protocols for multi-sensor hardware prototypes."
+      ],
+      techPills: ["ESP32", "Arduino Uno", "Sensor Calibration", "Wireless Telemetry"],
+      x: 54,
+      y: 35,
+      carAngle: 15
+    },
+    {
+      id: 5,
+      year: "Aug 2025 – 2027",
+      title: "M.Tech in Control & Instrumentation & GTA",
+      subtitle: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad",
+      category: "Postgraduate & Teaching",
+      highlight: "Appointed Graduate Teaching Assistant for 100+ students in Control Systems & Instrumentation.",
+      bulletPoints: [
+        "Mentored students on state-space modeling, root locus analysis, and closed-loop stability.",
+        "Conducting research on Hardware-in-the-Loop (HIL) calibration and advanced control theory."
+      ],
+      techPills: ["MNNIT Allahabad", "Control Systems", "HIL Calibration", "GTA Faculty"],
+      x: 69,
+      y: 75,
+      carAngle: -30
+    },
+    {
+      id: 6,
+      year: "Mar 2026",
+      title: "IEEE Xplore Published Lead Author",
+      subtitle: "IEEE Document ID: 10627276 • Global Index",
+      category: "Peer-Reviewed Research",
+      highlight: "Published lead author on INT8 Edge AI Model Quantization on ARM-based Raspberry Pi hardware with <1% mAP loss.",
+      bulletPoints: [
+        "Quantized custom YOLOv5 models via ONNX Runtime for sub-second edge retail inference (24.6ms).",
+        "Eliminated reliance on expensive cloud GPUs for constrained hardware environments."
+      ],
+      techPills: ["IEEE Xplore", "YOLOv5 INT8", "ONNX Runtime", "ARM Edge AI"],
+      x: 83,
+      y: 38,
+      carAngle: 10
+    },
+    {
+      id: 7,
+      year: "Aug 2026 – Present",
+      title: "Forward Deployed Systems & Automation Intern",
+      subtitle: "Wakefit Innovations Ltd • Bengaluru / Bommasandra",
+      category: "Active Industrial Role",
+      highlight: "Embedded on-site into manufacturing operations to deploy sub-50ms client-side schema transformation engines.",
+      bulletPoints: [
+        "Converted multi-day manual spreadsheet reconciliation into automated recursive validation engines with 100% data privacy.",
+        "Cut media onboarding latency by >80% with zero-compute in-browser batch processing."
+      ],
+      techPills: ["Forward Deployed", "Wakefit Systems", "Sub-50ms Engines", "Zero-Compute"],
+      x: 94,
+      y: 65,
+      carAngle: 0
+    }
+  ];
+
+  let currentStationId = 1;
+  let tourInterval: any = null;
+
+  const car = document.getElementById('animated-car');
+  const stationPins = document.querySelectorAll('.station-pin');
+  const activeStationNum = document.getElementById('active-station-num');
+
+  // Details card elements
+  const cardStationTag = document.getElementById('card-station-tag');
+  const cardCategory = document.getElementById('card-category');
+  const cardYear = document.getElementById('card-year');
+  const cardTitle = document.getElementById('card-title');
+  const cardSubtitle = document.getElementById('card-subtitle');
+  const cardHighlight = document.getElementById('card-highlight');
+  const cardBullets = document.getElementById('card-bullets');
+  const cardPills = document.getElementById('card-pills');
+
+  const btnPrev = document.getElementById('btn-prev-station');
+  const btnNext = document.getElementById('btn-next-station');
+  const btnAutoTour = document.getElementById('btn-auto-tour');
+  const tourBtnText = document.getElementById('tour-btn-text');
+
+  function moveCarToStation(stationId: number) {
+    const station = stationsData.find(s => s.id === stationId);
+    if (!station) return;
+
+    currentStationId = stationId;
+
+    // 1. Move Car
+    if (car) {
+      car.style.left = `${station.x}%`;
+      car.style.top = `${station.y}%`;
+      car.style.transform = `translate(-50%, -50%) rotate(${station.carAngle}deg)`;
+    }
+
+    // 2. Update Station Pins styling
+    stationPins.forEach(pin => {
+      const id = parseInt(pin.getAttribute('data-id') || '0');
+      const ring = pin.querySelector('.pin-ring');
+      if (ring) {
+        if (id === stationId) {
+          ring.className = 'pin-ring w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 border-lime-neon bg-midnight-900 shadow-glow-lime scale-110';
+        } else {
+          ring.className = 'pin-ring w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 border-violet-brand/70 bg-midnight-900/90 hover:border-lime-neon';
+        }
+      }
+    });
+
+    // 3. Update Indicator
+    if (activeStationNum) activeStationNum.textContent = stationId.toString();
+
+    // 4. Update Details Card
+    if (cardStationTag) cardStationTag.textContent = `Station ${station.id} of 7`;
+    if (cardCategory) cardCategory.textContent = station.category;
+    if (cardYear) cardYear.textContent = station.year;
+    if (cardTitle) cardTitle.textContent = station.title;
+    if (cardSubtitle) cardSubtitle.innerHTML = station.subtitle;
+    if (cardHighlight) cardHighlight.textContent = station.highlight;
+
+    if (cardBullets) {
+      cardBullets.innerHTML = station.bulletPoints.map(point => `
+        <li class="flex items-start gap-2 text-sm text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-neon mt-2 shrink-0"></span>
+          <span>${point}</span>
+        </li>
+      `).join('');
+    }
+
+    if (cardPills) {
+      cardPills.innerHTML = station.techPills.map(pill => `
+        <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-300">${pill}</span>
+      `).join('');
+    }
+  }
+
+  // Hover & Click listeners on each station pin
+  stationPins.forEach(pin => {
+    // When cursor enters station
+    pin.addEventListener('mouseenter', () => {
+      stopAutoTour();
+      const id = parseInt(pin.getAttribute('data-id') || '1');
+      moveCarToStation(id);
+    });
+
+    pin.addEventListener('click', () => {
+      stopAutoTour();
+      const id = parseInt(pin.getAttribute('data-id') || '1');
+      moveCarToStation(id);
+    });
+  });
+
+  // Next / Prev button triggers
+  btnNext?.addEventListener('click', () => {
+    stopAutoTour();
+    const nextId = currentStationId >= 7 ? 1 : currentStationId + 1;
+    moveCarToStation(nextId);
+  });
+
+  btnPrev?.addEventListener('click', () => {
+    stopAutoTour();
+    const prevId = currentStationId <= 1 ? 7 : currentStationId - 1;
+    moveCarToStation(prevId);
+  });
+
+  // Auto Tour logic
+  function stopAutoTour() {
+    if (tourInterval) {
+      clearInterval(tourInterval);
+      tourInterval = null;
+      if (tourBtnText) tourBtnText.textContent = "Auto Drive Tour";
+    }
+  }
+
+  btnAutoTour?.addEventListener('click', () => {
+    if (tourInterval) {
+      stopAutoTour();
+    } else {
+      if (tourBtnText) tourBtnText.textContent = "Stop Driving Tour";
+      tourInterval = setInterval(() => {
+        const nextId = currentStationId >= 7 ? 1 : currentStationId + 1;
+        moveCarToStation(nextId);
+      }, 2800);
+    }
+  });
+</script>

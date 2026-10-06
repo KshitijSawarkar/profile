@@ -1,0 +1,241 @@
+---
+---
+
+<section id="sandboxes" class="py-16 md:py-24 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-violet-deep/60 border border-violet-brand/40 text-xs font-mono text-lime-neon mb-3">
+        <span class="w-2 h-2 rounded-full bg-lime-neon"></span>
+        INTERACTIVE_ENGINEERING_LAB
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-display">
+        Live Engineering Sandboxes & Simulations
+      </h2>
+      <p class="text-midnight-200 mt-2 max-w-2xl text-base">
+        Interact directly with simulations of my published research in Edge AI model quantization, sensorless closed-loop control, and client-side automation architecture.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Sandbox 1: INT8 vs FP32 Quantization Simulator (IEEE Xplore) -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-lime-neon/30 relative overflow-hidden shadow-card-glow">
+        <div class="flex items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-lime-neon/15 text-lime-neon border border-lime-neon/30">
+              IEEE DOC ID: 10627276
+            </span>
+            <span class="text-xs font-mono text-slate-400">ARM Edge Benchmark</span>
+          </div>
+        </div>
+
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
+          Edge AI INT8 vs. FP32 Quantizer Simulator
+        </h3>
+        <p class="text-xs text-midnight-200 mb-6 leading-relaxed">
+          Toggle between standard FP32 and ONNX Runtime INT8 Post-Training Quantization on Raspberry Pi hardware to observe latency, memory, and accuracy trade-offs.
+        </p>
+
+        <!-- Precision Selector Buttons -->
+        <div class="flex items-center gap-3 p-1.5 rounded-xl bg-midnight-900/90 border border-midnight-700 mb-6 font-mono text-xs">
+          <button
+            id="btn-fp32"
+            class="flex-1 py-2 px-3 rounded-lg text-slate-300 hover:text-white transition-all text-center"
+          >
+            Baseline FP32 (Standard)
+          </button>
+          <button
+            id="btn-int8"
+            class="flex-1 py-2 px-3 rounded-lg bg-lime-neon text-midnight-950 font-bold transition-all text-center shadow-glow-lime"
+          >
+            INT8 Quantized (IEEE Paper)
+          </button>
+        </div>
+
+        <!-- Dynamic Metric Dashboard -->
+        <div class="grid grid-cols-2 gap-3 mb-6 font-mono text-xs">
+          <div class="p-3.5 rounded-xl bg-midnight-900/90 border border-midnight-700">
+            <span class="text-slate-400 block text-[10px] uppercase">Inference Latency</span>
+            <span id="metric-latency" class="text-xl font-bold text-lime-neon">24.6 ms</span>
+            <span id="metric-fps" class="text-[10px] text-slate-400 block mt-0.5">~40.6 FPS (Real-time)</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-midnight-900/90 border border-midnight-700">
+            <span class="text-slate-400 block text-[10px] uppercase">RAM Footprint</span>
+            <span id="metric-ram" class="text-xl font-bold text-violet-300">92.4 MB</span>
+            <span class="text-[10px] text-slate-400 block mt-0.5">-75.7% Memory Reduction</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-midnight-900/90 border border-midnight-700">
+            <span class="text-slate-400 block text-[10px] uppercase">Detection Accuracy (mAP@0.5)</span>
+            <span id="metric-map" class="text-xl font-bold text-pink-neon">97.8%</span>
+            <span class="text-[10px] text-slate-400 block mt-0.5">&lt;0.8% loss vs FP32</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-midnight-900/90 border border-midnight-700">
+            <span class="text-slate-400 block text-[10px] uppercase">Compute Target</span>
+            <span class="text-xl font-bold text-white">Raspberry Pi</span>
+            <span class="text-[10px] text-slate-400 block mt-0.5">ARM Cortex-A76 (No GPU)</span>
+          </div>
+        </div>
+
+        <!-- Latency Bar Visualizer -->
+        <div class="p-4 rounded-xl bg-midnight-900/90 border border-midnight-700 font-mono text-xs">
+          <div class="flex justify-between items-center mb-1 text-[11px]">
+            <span class="text-slate-300">Relative Latency comparison:</span>
+            <span id="latency-ratio" class="text-lime-neon font-bold">5.8x Faster Inference</span>
+          </div>
+          <div class="w-full h-3 rounded-full bg-midnight-950 overflow-hidden relative">
+            <div id="latency-bar" class="h-full bg-gradient-to-r from-lime-neon to-emerald-400 rounded-full transition-all duration-500 w-[17%]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sandbox 2: Closed-Loop Sensorless Solar Tracking Simulator -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-violet-brand/40 relative overflow-hidden shadow-card-glow flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-violet-deep border border-violet-brand/50 text-violet-300">
+              Closed-Loop Control
+            </span>
+            <span class="text-xs font-mono text-lime-neon">No External LDRs</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
+            Sensorless PV Differential Tracking Simulator
+          </h3>
+          <p class="text-xs text-midnight-200 mb-6 leading-relaxed">
+            Drag the sun angle slider to simulate sunlight gradient shifts. The closed-loop controller measures photovoltaic voltage differential ($\Delta V$) directly from the cells to actuate the servo toward peak power.
+          </p>
+
+          <!-- Interactive Sun Angle Slider -->
+          <div class="p-4 rounded-xl bg-midnight-900/90 border border-midnight-700 mb-6 font-mono text-xs">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-slate-300 flex items-center gap-1.5">
+                <span>☀️ Sun Position Angle:</span>
+                <span id="sun-angle-val" class="text-lime-neon font-bold text-sm">90°</span>
+              </span>
+              <span id="tracking-status" class="text-[11px] text-lime-neon font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-lime-neon animate-ping"></span>
+                In Equilibrium
+              </span>
+            </div>
+            <input
+              type="range"
+              id="sun-slider"
+              min="0"
+              max="180"
+              value="90"
+              class="w-full h-2 bg-midnight-950 rounded-lg appearance-none cursor-pointer accent-lime-neon"
+            />
+            <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+              <span>0° (East Horizon)</span>
+              <span>90° (Zenith / Peak)</span>
+              <span>180° (West Horizon)</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Differential Telemetry -->
+          <div class="grid grid-cols-3 gap-2 mb-4 font-mono text-xs">
+            <div class="p-3 rounded-lg bg-midnight-900/90 border border-midnight-700 text-center">
+              <span class="text-slate-400 block text-[10px]">Cell $V_1$</span>
+              <span id="v1-val" class="text-sm font-bold text-lime-neon">4.82 V</span>
+            </div>
+            <div class="p-3 rounded-lg bg-midnight-900/90 border border-midnight-700 text-center">
+              <span class="text-slate-400 block text-[10px]">Cell $V_2$</span>
+              <span id="v2-val" class="text-sm font-bold text-lime-neon">4.82 V</span>
+            </div>
+            <div class="p-3 rounded-lg bg-midnight-900/90 border border-midnight-700 text-center">
+              <span class="text-slate-400 block text-[10px]">$\Delta V$ Error</span>
+              <span id="dv-val" class="text-sm font-bold text-white">0.00 V</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servo Output Feedback -->
+        <div class="p-3.5 rounded-xl bg-violet-deep/30 border border-violet-brand/40 font-mono text-xs flex items-center justify-between">
+          <span class="text-slate-300">Actuated Servo Target:</span>
+          <span id="servo-target" class="text-lime-neon font-bold text-sm">90.0° (Locked on Peak Power)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // INT8 vs FP32 Quantization Simulator Logic
+  const btnFp32 = document.getElementById('btn-fp32');
+  const btnInt8 = document.getElementById('btn-int8');
+  const metricLatency = document.getElementById('metric-latency');
+  const metricFps = document.getElementById('metric-fps');
+  const metricRam = document.getElementById('metric-ram');
+  const metricMap = document.getElementById('metric-map');
+  const latencyRatio = document.getElementById('latency-ratio');
+  const latencyBar = document.getElementById('latency-bar');
+
+  function setPrecision(mode: 'int8' | 'fp32') {
+    if (mode === 'int8') {
+      btnInt8?.classList.add('bg-lime-neon', 'text-midnight-950', 'font-bold', 'shadow-glow-lime');
+      btnInt8?.classList.remove('text-slate-300');
+      btnFp32?.classList.remove('bg-lime-neon', 'text-midnight-950', 'font-bold', 'shadow-glow-lime');
+      btnFp32?.classList.add('text-slate-300');
+
+      if (metricLatency) metricLatency.textContent = '24.6 ms';
+      if (metricFps) metricFps.textContent = '~40.6 FPS (Real-time)';
+      if (metricRam) metricRam.textContent = '92.4 MB';
+      if (metricMap) metricMap.textContent = '97.8%';
+      if (latencyRatio) latencyRatio.textContent = '5.8x Faster Inference';
+      if (latencyBar) latencyBar.style.width = '17%';
+    } else {
+      btnFp32?.classList.add('bg-lime-neon', 'text-midnight-950', 'font-bold', 'shadow-glow-lime');
+      btnFp32?.classList.remove('text-slate-300');
+      btnInt8?.classList.remove('bg-lime-neon', 'text-midnight-950', 'font-bold', 'shadow-glow-lime');
+      btnInt8?.classList.add('text-slate-300');
+
+      if (metricLatency) metricLatency.textContent = '142.8 ms';
+      if (metricFps) metricFps.textContent = '~7.0 FPS (Lag)';
+      if (metricRam) metricRam.textContent = '380.0 MB';
+      if (metricMap) metricMap.textContent = '98.4%';
+      if (latencyRatio) latencyRatio.textContent = 'Baseline (1.0x)';
+      if (latencyBar) latencyBar.style.width = '100%';
+    }
+  }
+
+  btnFp32?.addEventListener('click', () => setPrecision('fp32'));
+  btnInt8?.addEventListener('click', () => setPrecision('int8'));
+
+  // Sensorless Solar Tracking Simulator Logic
+  const sunSlider = document.getElementById('sun-slider') as HTMLInputElement;
+  const sunAngleVal = document.getElementById('sun-angle-val');
+  const v1Val = document.getElementById('v1-val');
+  const v2Val = document.getElementById('v2-val');
+  const dvVal = document.getElementById('dv-val');
+  const servoTarget = document.getElementById('servo-target');
+  const trackingStatus = document.getElementById('tracking-status');
+
+  sunSlider?.addEventListener('input', (e) => {
+    const angle = parseFloat((e.target as HTMLInputElement).value);
+    if (sunAngleVal) sunAngleVal.textContent = `${angle}°`;
+
+    const rad = (angle * Math.PI) / 180;
+    // Differential voltage calculation
+    const v1 = (5.0 * Math.max(0.1, Math.sin(rad * 0.95))).toFixed(2);
+    const v2 = (5.0 * Math.max(0.1, Math.cos((rad - Math.PI / 2) * 0.95))).toFixed(2);
+    const dv = (parseFloat(v1) - parseFloat(v2)).toFixed(2);
+
+    if (v1Val) v1Val.textContent = `${v1} V`;
+    if (v2Val) v2Val.textContent = `${v2} V`;
+    if (dvVal) dvVal.textContent = `${dv > 0 ? '+' : ''}${dv} V`;
+
+    if (servoTarget) {
+      servoTarget.textContent = `${angle.toFixed(1)}° (Closed-Loop Correction)`;
+    }
+
+    if (trackingStatus) {
+      if (Math.abs(parseFloat(dv)) < 0.1) {
+        trackingStatus.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-lime-neon animate-ping"></span> Peak Power Locked';
+        trackingStatus.className = 'text-[11px] text-lime-neon font-semibold flex items-center gap-1';
+      } else {
+        trackingStatus.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-pink-neon animate-pulse"></span> Auto-Tracking...';
+        trackingStatus.className = 'text-[11px] text-pink-neon font-semibold flex items-center gap-1';
+      }
+    }
+  });
+</script>

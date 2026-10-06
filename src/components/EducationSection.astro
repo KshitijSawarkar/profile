@@ -1,0 +1,139 @@
+---
+export interface EducationItem {
+  degree: string;
+  specialization: string;
+  institution: string;
+  location: string;
+  duration: string;
+  status: string;
+  logo: string;
+  appointment?: {
+    title: string;
+    description: string;
+  } | null;
+  coreFocus: string[];
+}
+
+const educationData: EducationItem[] = [
+  {
+    degree: "Master of Technology (M.Tech)",
+    specialization: "Control & Instrumentation",
+    institution: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad",
+    location: "Prayagraj, India",
+    duration: "August 2025 – April 2027",
+    status: "Ongoing",
+    logo: "/images/mnnit-logo.png",
+    appointment: {
+      title: "Graduate Teaching Assistant (GTA)",
+      description: "Appointed to conduct Control Systems & Instrumentation laboratory sessions and undergraduate lectures for a cohort of 100+ students."
+    },
+    coreFocus: [
+      "Closed-Loop State Feedback Design",
+      "Mathematical Stability Analysis",
+      "Hardware-in-the-Loop (HIL) Testing",
+      "Modern Control Theory",
+      "Advanced Instrumentation Systems"
+    ]
+  },
+  {
+    degree: "Bachelor of Technology (B.Tech)",
+    specialization: "Electronics & Communication Engineering",
+    institution: "Shri Ramdeobaba College of Engineering and Management (RCOEM)",
+    location: "Nagpur, India",
+    duration: "October 2020 – April 2024",
+    status: "Completed",
+    logo: "/images/rcoem-logo.png",
+    appointment: null,
+    coreFocus: [
+      "Embedded Systems",
+      "Signal Processing",
+      "Digital Communication",
+      "Microcontrollers & Microprocessors",
+      "Hardware-Software Interfacing"
+    ]
+  }
+];
+---
+
+<section id="education" class="py-16 md:py-20 border-t border-midnight-600/50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
+        03 / ACADEMIC BACKGROUND
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+        Education & Academic Profile
+      </h2>
+      <p class="text-slate-400 mt-2 text-base">
+        Formal engineering foundation in Control & Instrumentation and Electronics & Communication.
+      </p>
+    </div>
+
+    <!-- 2 Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {educationData.map((edu) => (
+        <div class="glass-panel p-6 sm:p-7 rounded-2xl border border-midnight-600/80 hover:border-violet-brand/60 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg bg-white/95 p-1 flex items-center justify-center shadow border border-white/20 shrink-0">
+                <img
+                  src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${edu.logo}`}
+                  alt={`${edu.institution} Logo`}
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-midnight-900 border border-midnight-700 text-lime-neon">
+                    {edu.status}
+                  </span>
+                  <span class="text-xs font-mono text-slate-400">
+                    {edu.duration}
+                  </span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-white">
+                  {edu.degree}
+                </h3>
+                <p class="text-sm font-medium text-violet-300">
+                  in {edu.specialization}
+                </p>
+              </div>
+            </div>
+
+            <div class="text-xs font-mono text-slate-400 mb-4 pb-3 border-b border-midnight-600/50">
+              {edu.institution} &bull; {edu.location}
+            </div>
+
+            <!-- GTA Appointment Callout -->
+            {edu.appointment && (
+              <div class="mb-4 p-3.5 rounded-xl bg-midnight-900/90 border border-violet-brand/40">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-xs font-bold text-white font-mono">{edu.appointment.title}</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-lime-neon/15 text-lime-neon border border-lime-neon/30">100+ Students</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  {edu.appointment.description}
+                </p>
+              </div>
+            )}
+
+            <!-- Core Coursework / Focus -->
+            <div class="mb-4">
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-2">Core Coursework & Focus:</span>
+              <div class="flex flex-wrap gap-1.5">
+                {edu.coreFocus.map(item => (
+                  <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-midnight-900/60 border border-midnight-700 text-slate-300">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

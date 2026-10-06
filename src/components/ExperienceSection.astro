@@ -1,0 +1,151 @@
+---
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  category: string;
+  logo?: string;
+  isCurrent?: boolean;
+  bulletPoints: string[];
+  tags: string[];
+}
+
+const experiences: ExperienceItem[] = [
+  {
+    company: "Wakefit Innovations Ltd",
+    role: "Forward Deployed Systems & Automation Intern (Intern-PGET)",
+    location: "Bengaluru / Bommasandra, India",
+    period: "Aug 2026 – Present",
+    category: "Industrial Manufacturing Operations",
+    isCurrent: true,
+    bulletPoints: [
+      "Embedded directly into manufacturing and New Product Line (NPL) operational teams to diagnose operational friction, manual data entry drift, and spreadsheet reconciliation bottlenecks.",
+      "Architected client-side Finished Goods (FG) & BOM schema transformation engines (npl-automation.pages.dev), converting multi-day manual reconciliation into automated recursive validation executing in sub-50ms with 100% data privacy.",
+      "Engineered in-browser Batch Asset Ingestion Engine (image-sequence-renamer.pages.dev) to normalize media asset naming schemas, reducing asset onboarding latency by >80% with zero server compute overhead.",
+      "Deployed Deterministic Repair Cost Engine incorporating multi-parameter pricing logic to eliminate margin erosion caused by manual human calculation drift."
+    ],
+    tags: ["On-Site Systems Deployment", "Client-Side Processing", "BOM Normalization", "Manufacturing Operations"]
+  },
+  {
+    company: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad",
+    role: "Graduate Teaching Assistant (M.Tech Control & Instrumentation)",
+    location: "Prayagraj, India",
+    period: "Aug 2025 – Present",
+    category: "Department of Electrical Engineering",
+    logo: "/images/mnnit-logo.png",
+    isCurrent: true,
+    bulletPoints: [
+      "Assisting faculty in conducting hardware laboratory sessions, tutorials, and lectures for a cohort of 100+ undergraduate engineering students in Control Systems & Instrumentation.",
+      "Mentoring students on mathematical modeling, state-space representations, closed-loop feedback stability, root locus analysis, and hardware-in-the-loop (HIL) calibration."
+    ],
+    tags: ["Control Systems", "State-Space Modeling", "HIL Calibration", "Stability Analysis"]
+  },
+  {
+    company: "Sharon Innovations (RCOEM TBI Foundation)",
+    role: "IoT & Embedded Systems Deployment Intern",
+    location: "Nagpur, India",
+    period: "Dec 2023 – Feb 2024",
+    category: "Technology Business Incubator",
+    logo: "/images/rcoem-logo.png",
+    bulletPoints: [
+      "Integrated physical ESP32 and Arduino Uno microcontroller sensor nodes with environmental telemetry sensors, establishing low-power wireless transmission pipelines.",
+      "Calibrated analog-to-digital (ADC) sensor conversions and debugged bus communication protocols (I2C, SPI, UART) for physical prototype testing and field validation."
+    ],
+    tags: ["ESP32", "Arduino Hardware", "I2C / SPI / UART", "Sensor Calibration"]
+  },
+  {
+    company: "All India Council for Technical Education (AICTE)",
+    role: "Cloud Infrastructure & MLOps Intern",
+    location: "Remote, India",
+    period: "May 2023 – Jul 2023",
+    category: "AWS Cloud Infrastructure Program",
+    bulletPoints: [
+      "Architected event-driven serverless data ingestion pipelines using AWS S3 bucket triggers and AWS Lambda functions, achieving ~99.9% uptime.",
+      "Deployed and monitored machine learning model endpoints using Amazon SageMaker (XGBoost, Linear Learner) with optimized compute allocation across EC2 and S3 storage tiers."
+    ],
+    tags: ["AWS Lambda", "Amazon SageMaker", "AWS S3", "Serverless Ingestion"]
+  }
+];
+---
+
+<section id="experience" class="py-16 md:py-20 border-t border-midnight-600/50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="mb-10">
+      <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
+        01 / FIELD & SYSTEMS EXPERIENCE
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
+        Forward Deployed & Engineering Roles
+      </h2>
+      <p class="text-slate-400 mt-2 text-base">
+        Embedding into production environments, manufacturing facilities, and hardware labs to deliver high-impact software and hardware solutions.
+      </p>
+    </div>
+
+    <!-- Timeline List -->
+    <div class="space-y-6">
+      {experiences.map((exp) => (
+        <div class="glass-panel p-6 sm:p-7 rounded-2xl border border-midnight-600/80 hover:border-violet-brand/60 transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+            <div class="flex items-start gap-4">
+              {exp.logo && (
+                <div class="w-11 h-11 rounded-lg bg-white/95 p-1 flex items-center justify-center shadow border border-white/20 shrink-0 hidden sm:flex">
+                  <img
+                    src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${exp.logo}`}
+                    alt={`${exp.company} Logo`}
+                    class="max-w-full max-h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                  {exp.isCurrent && (
+                    <span class="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-lime-neon/15 text-lime-neon border border-lime-neon/30">
+                      Active Role
+                    </span>
+                  )}
+                  <span class="text-xs font-mono text-violet-300">
+                    {exp.category}
+                  </span>
+                </div>
+
+                <h3 class="text-lg sm:text-xl font-bold text-white">
+                  {exp.role}
+                </h3>
+                <p class="text-sm font-medium text-slate-300 mt-0.5">
+                  {exp.company} &bull; <span class="text-slate-400 text-xs">{exp.location}</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="font-mono text-xs text-slate-400 shrink-0">
+              {exp.period}
+            </div>
+          </div>
+
+          <!-- Bullet Points -->
+          <ul class="space-y-2 mb-5">
+            {exp.bulletPoints.map(point => (
+              <li class="flex items-start gap-2.5 text-sm text-slate-300 leading-relaxed">
+                <span class="w-1.5 h-1.5 rounded-full bg-lime-neon mt-2 shrink-0"></span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-3 border-t border-midnight-600/40">
+            {exp.tags.map(tag => (
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-midnight-900/60 border border-midnight-700 text-slate-400">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

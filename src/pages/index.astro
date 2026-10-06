@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HeroSection from '../components/HeroSection.astro';
+import InteractiveRoadmap from '../components/InteractiveRoadmap.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+import EducationSection from '../components/EducationSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Kshitij Sawarkar | Forward Deployed Engineer (AI, Systems & Hardware)"
+  description="Portfolio of Kshitij Sawarkar — Forward Deployed Systems & Automation Engineer, M.Tech Control & Instrumentation (MNNIT Allahabad), Systems Intern at Wakefit, IEEE Published Lead Author."
+>
+  <Navbar />
+  <main>
+    <HeroSection />
+    <InteractiveRoadmap />
+    <ExperienceSection />
+    <ProjectsSection />
+    <EducationSection />
+    <SkillsSection />
+    <ContactSection />
+  </main>
+  <Footer />
+</Layout>
