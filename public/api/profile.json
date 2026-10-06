@@ -1,0 +1,64 @@
+{
+  "candidate": "Kshitij Ashok Sawarkar",
+  "title": "Applied AI & Systems Engineer",
+  "education": {
+    "postgraduate": {
+      "degree": "M.Tech in Control & Instrumentation",
+      "institution": "Motilal Nehru National Institute of Technology (MNNIT) Allahabad",
+      "duration": "2025 - 2027",
+      "role": "Graduate Teaching Assistant (100+ students)"
+    },
+    "undergraduate": {
+      "degree": "B.Tech in Electronics & Communication Engineering",
+      "institution": "Shri Ramdeobaba College of Engineering and Management (RCOEM)",
+      "duration": "2020 - 2024"
+    }
+  },
+  "locations": ["Bengaluru, India", "Nagpur, India"],
+  "contact": {
+    "email": "kshitijsawarkar333@gmail.com",
+    "phone": "+919823252972",
+    "github": "https://github.com/KshitijSawarkar",
+    "linkedin": "https://linkedin.com/in/kshitijas"
+  },
+  "summary": "Applied AI & Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, specializing in autonomous agent workflows, low-latency edge inference, and deterministic systems automation. Proven record translating high-friction operational workflows into sub-50ms client-side schema engines and deploying quantized neural networks on edge hardware (IEEE Xplore Doc ID: 10627276). Strong background combining control systems theory, model evals, and multi-tier agent orchestration.",
+  "publication": {
+    "journal": "IEEE Xplore",
+    "docId": "10627276",
+    "title": "Automated Edge Vision & Retail Checkout System",
+    "role": "Published Lead Author",
+    "date": "March 2026",
+    "keyMetrics": "<1% mAP loss via ONNX INT8 Quantization on Raspberry Pi ARM"
+  },
+  "skills_taxonomy": {
+    "applied_ai_edge_vision": ["YOLOv5", "OpenCV", "INT8 Quantization", "ONNX Runtime", "Raspberry Pi", "ROS2"],
+    "autonomous_agent_systems": ["Agent State Machines", "Model Context Protocol (MCP)", "LLM Failover Routing", "Pydantic v2 Guardrails"],
+    "systems_automation_edge_web": ["Cloudflare Pages/Workers", "Astro.js", "Sub-50ms Schema Engines", "Python", "TypeScript"],
+    "control_instrumentation": ["Closed-Loop State Feedback", "State-Space Modeling", "HIL Testing", "MATLAB/Simulink"]
+  },
+  "ventures": [
+    {
+      "name": "cardsfinders.com",
+      "role": "Founder & Full-Stack Edge Systems Architect",
+      "architecture": "Cloudflare Pages & Workers, Zero Server Cost"
+    },
+    {
+      "name": "myuselessweb.com",
+      "role": "Creator & Edge Infrastructure Engineer",
+      "architecture": "<50ms Global Latency"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Wakefit Innovations Ltd",
+      "role": "Systems & Automation Engineering Intern (Intern-PGET)",
+      "period": "Aug 2026 – Present",
+      "deployments": ["https://npl-automation.pages.dev", "https://image-sequence-renamer.pages.dev", "Wakefit Repair Calculator"]
+    },
+    {
+      "company": "MNNIT Allahabad",
+      "role": "Graduate Teaching Assistant (GTA)",
+      "period": "Aug 2025 – Present"
+    }
+  ]
+}

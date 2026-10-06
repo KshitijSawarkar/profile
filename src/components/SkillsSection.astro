@@ -1,39 +1,50 @@
 ---
-const skillGroups = [
+const skillPillars = [
   {
-    title: "Field AI & Edge Deployment",
+    pillarNum: "01",
+    title: "Applied AI & Edge Vision",
+    badge: "Edge Intelligence",
     skills: [
-      "YOLOv5 Edge Deployment",
-      "INT8 ONNX Quantization",
-      "ARM Edge (Raspberry Pi 5)",
-      "Monocular Computer Vision",
-      "Model Optimization (<1% mAP loss)",
-      "OpenCV Pipelines",
-      "Amazon SageMaker MLOps"
+      "YOLOv5",
+      "OpenCV",
+      "INT8 Quantization",
+      "ONNX Runtime",
+      "Raspberry Pi",
+      "ROS2"
     ]
   },
   {
-    title: "Hardware, Control & Robotics",
+    pillarNum: "02",
+    title: "Autonomous Agent Systems",
+    badge: "Deterministic AI",
+    skills: [
+      "Agent State Machines",
+      "Model Context Protocol (MCP)",
+      "LLM Failover Routing",
+      "Pydantic v2 Guardrails"
+    ]
+  },
+  {
+    pillarNum: "03",
+    title: "Systems Automation & Edge Web",
+    badge: "High-Throughput",
+    skills: [
+      "Cloudflare Pages/Workers",
+      "Astro.js",
+      "Sub-50ms Schema Engines",
+      "Python",
+      "TypeScript"
+    ]
+  },
+  {
+    pillarNum: "04",
+    title: "Control & Instrumentation",
+    badge: "Control Systems",
     skills: [
       "Closed-Loop State Feedback",
-      "Hardware-in-the-Loop (HIL)",
-      "ROS2 & SLAM Navigation",
-      "ESP32 & Arduino Hardware",
-      "I2C / SPI / UART Bus Protocols",
-      "ADC Sensor Interfacing",
-      "Mathematical Stability Analysis"
-    ]
-  },
-  {
-    title: "Operational Tooling & Systems",
-    skills: [
-      "Sub-50ms Client-Side Engines",
-      "BOM & Schema Transformation",
-      "Zero-Compute Cloudflare Edge",
-      "AWS Lambda & S3 Pipelines",
-      "Multi-Agent Failover Routing",
-      "Python, C++, TypeScript",
-      "Astro & Modern Web"
+      "State-Space Modeling",
+      "HIL Testing",
+      "MATLAB/Simulink"
     ]
   }
 ];
@@ -44,29 +55,41 @@ const skillGroups = [
     <!-- Header -->
     <div class="mb-10">
       <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
-        04 / FORWARD DEPLOYED TOOLKIT
+        04 / SYSTEMS TAXONOMY
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-        Technical & Deployment Capabilities
+        4-Pillar Systems Taxonomy
       </h2>
       <p class="text-slate-400 mt-2 text-base">
-        A pragmatic engineering stack for bridging physical hardware, edge machine learning, and enterprise operational systems.
+        A deterministic engineering architecture bridging physical control theory, edge computer vision, and autonomous agent systems.
       </p>
     </div>
 
-    <!-- 3-Column Clean Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {skillGroups.map(group => (
-        <div class="glass-panel p-6 rounded-2xl border border-midnight-600/80">
-          <h3 class="text-base font-bold text-white mb-4 pb-2 border-b border-midnight-700">
-            {group.title}
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            {group.skills.map(skill => (
-              <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-200">
-                {skill}
+    <!-- 4-Pillar Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {skillPillars.map(pillar => (
+        <div class="glass-panel p-6 rounded-2xl border border-midnight-600/80 hover:border-violet-brand/60 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-xs font-mono font-bold text-lime-neon">
+                Pillar {pillar.pillarNum}
               </span>
-            ))}
+              <span class="text-[11px] font-mono text-violet-300 px-2 py-0.5 rounded bg-midnight-900 border border-violet-brand/40">
+                {pillar.badge}
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-4 pb-2 border-b border-midnight-700">
+              {pillar.title}
+            </h3>
+
+            <div class="flex flex-wrap gap-2">
+              {pillar.skills.map(skill => (
+                <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-midnight-900/80 border border-midnight-700 text-slate-200">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))}

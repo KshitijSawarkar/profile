@@ -10,43 +10,60 @@ export interface ProjectItem {
   description: string;
   metrics: string[];
   techStack: string[];
+  featured?: boolean;
 }
 
 const projects: ProjectItem[] = [
   {
     title: "Automated Edge Vision & Retail Checkout System",
-    badge: "IEEE Xplore Published Lead Author",
+    badge: "IEEE Xplore Peer-Reviewed Research",
     badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
-    role: "Lead Author & Edge AI Architect",
+    role: "Published Lead Author",
     date: "Published Mar 2026",
     docId: "IEEE Doc ID: 10627276",
-    description: "Architected and deployed an automated item detection and billing pipeline using custom YOLOv5 models on physical ARM-based Raspberry Pi hardware. Implemented Post-Training Quantization (INT8) via ONNX Runtime to balance activation scales, preserving <1% mAP loss while achieving sub-second inference in constrained retail environments without cloud GPUs.",
+    featured: true,
+    description: "Architected an automated item detection and billing pipeline using custom YOLOv5 models deployed directly onto physical ARM-based Raspberry Pi hardware. Implemented Post-Training Quantization (INT8) via ONNX Runtime to balance activation scales, preserving <1% mAP loss while enabling sub-second inference (24.6ms) without expensive cloud GPUs.",
     metrics: [
       "<1% mAP loss with INT8 Quantization",
       "Sub-second ARM edge inference (24.6ms)",
       "Zero reliance on cloud GPUs"
     ],
-    techStack: ["IEEE Xplore", "YOLOv5", "ONNX Runtime", "INT8 Quantization", "Raspberry Pi", "ARM Edge Deployment"]
+    techStack: ["IEEE Xplore", "YOLOv5", "ONNX Runtime", "INT8 Quantization", "Raspberry Pi", "ARM Edge"]
   },
   {
-    title: "Wakefit Schema Transformation & Media Asset Engines",
-    badge: "Operational Manufacturing Deployment",
+    title: "cardsfinders.com — Sovereign Edge Financial Tools",
+    badge: "Sovereign Venture & Edge Architecture",
     badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
-    role: "Forward Deployed Systems Engineer",
-    date: "Aug 2026 – Present",
-    liveUrl: "https://npl-automation.pages.dev",
-    description: "Built and deployed custom client-side Finished Goods (FG) & BOM schema transformation engines directly for factory floor and NPL teams. Converted multi-day spreadsheet reconciliation into an automated recursive validation pipeline executing in sub-50ms with 100% client-side privacy, eliminating operational human error and asset onboarding lag.",
+    role: "Founder & Full-Stack Edge Systems Architect",
+    date: "Jul 2026 – Present",
+    liveUrl: "https://cardsfinders.com",
+    description: "Conceived, architected, and deployed a global financial tools comparison platform hosted entirely on Cloudflare Pages and Workers. Engineered custom edge DNS configurations, Cloudflare email routing rules, and sub-second Time-to-First-Byte (TTFB) delivery pipelines with zero server runtime compute cost.",
     metrics: [
-      "Sub-50ms recursive validation pipeline",
-      ">80% reduction in media onboarding latency",
-      "100% client-side privacy & zero server cost"
+      "Sub-second TTFB global edge delivery",
+      "Top-tier Core Web Vitals & modern SEO",
+      "Zero server runtime compute overhead"
     ],
-    techStack: ["Edge Systems", "Cloudflare Pages", "Schema Automation", "Client-Side Processing", "BOM Normalization"]
+    techStack: ["Cloudflare Pages", "Cloudflare Workers", "Edge DNS", "Serverless", "Modern SEO"]
   },
   {
-    title: "HiWonder MentorPi M1 Autonomous Mobile Robot (ROS2)",
-    badge: "Autonomous Mobile Robotics Deployment",
+    title: "myuselessweb.com — High-Traffic Edge Discovery",
+    badge: "Interactive Edge Experiment",
     badgeColor: "bg-pink-neon/15 text-pink-neon border-pink-neon/40",
+    role: "Creator & Edge Infrastructure Engineer",
+    date: "Jan 2024 – Present",
+    liveUrl: "https://myuselessweb.com",
+    description: "Built and deployed an ultra-minimalist, high-traffic interactive web discovery platform deployed over Cloudflare edge infrastructure. Optimized DOM rendering cycles and assets to guarantee near-instantaneous global edge delivery (<50ms) across all devices.",
+    metrics: [
+      "<50ms global latency over Cloudflare edge",
+      "Optimized DOM rendering cycles",
+      "High-traffic viral structural architecture"
+    ],
+    techStack: ["Edge Infrastructure", "Ultra-Low Latency", "DOM Optimization", "Interactive Web"]
+  },
+  {
+    title: "HiWonder MentorPi M1 Autonomous Mobile Robot",
+    badge: "Robotics & Autonomous Navigation",
+    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
     role: "Robotics & Autonomous Systems Engineer",
     date: "Jul 2026",
     description: "Assembled, flashed, and configured the HiWonder MentorPi M1 mobile robot running on a Raspberry Pi 5 under Robot Operating System 2 (ROS2). Integrated monocular camera vision perception, battery power management, and SLAM navigation algorithms for autonomous indoor path planning.",
@@ -60,7 +77,7 @@ const projects: ProjectItem[] = [
   {
     title: "Sensorless Solar Photovoltaic Tracking System",
     badge: "Autonomous Control Systems",
-    badgeColor: "bg-lime-neon/15 text-lime-neon border-lime-neon/40",
+    badgeColor: "bg-violet-300/15 text-violet-300 border-violet-brand/40",
     role: "Hardware & Control Systems Designer",
     date: "Mar 2026",
     description: "Invented a closed-loop solar tracking mechanism using the photovoltaic output voltage of the solar panels themselves to detect light gradients, completely eliminating external light-dependent resistors (LDRs). Programmed microcontroller actuation algorithms driving servo motors toward peak power points.",
@@ -79,20 +96,20 @@ const projects: ProjectItem[] = [
     <!-- Header -->
     <div class="mb-10">
       <div class="text-xs font-mono text-lime-neon uppercase tracking-wider mb-2">
-        02 / DEPLOYMENTS & APPLIED RESEARCH
+        02 / RESEARCH & SOVEREIGN VENTURES
       </div>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-        Featured Systems & Deployments
+        Peer-Reviewed Research & Systems
       </h2>
       <p class="text-slate-400 mt-2 text-base">
-        Selected real-world deployments across Edge AI quantization, manufacturing floor automation, and mobile robotics.
+        Selected peer-reviewed IEEE publications, sovereign web platforms, and physical autonomous robotics systems.
       </p>
     </div>
 
-    <!-- 2x2 Grid -->
+    <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {projects.map(proj => (
-        <div class="glass-panel p-6 sm:p-7 rounded-2xl border border-midnight-600/80 hover:border-violet-brand/60 transition-all flex flex-col justify-between group">
+        <div class={`glass-panel p-6 sm:p-7 rounded-2xl border ${proj.featured ? 'border-lime-neon/50 md:col-span-2' : 'border-midnight-600/80'} hover:border-violet-brand/60 transition-all flex flex-col justify-between group`}>
           <div>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <span class={`px-2.5 py-0.5 rounded text-xs font-mono font-semibold border ${proj.badgeColor}`}>
@@ -108,8 +125,8 @@ const projects: ProjectItem[] = [
             </h3>
 
             {proj.docId && (
-              <div class="text-xs font-mono text-lime-neon mb-3">
-                {proj.docId}
+              <div class="text-xs font-mono text-lime-neon mb-3 font-semibold">
+                {proj.docId} &bull; Published Lead Author
               </div>
             )}
 
@@ -120,7 +137,7 @@ const projects: ProjectItem[] = [
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 text-xs font-mono text-lime-neon hover:underline mb-3"
               >
-                <span>Live Deployment: {proj.liveUrl.replace('https://', '')}</span>
+                <span>Live Platform: {proj.liveUrl.replace('https://', '')}</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>

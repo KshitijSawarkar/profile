@@ -1,0 +1,27 @@
+# Kshitij Ashok Sawarkar - Applied AI & Systems Engineer
+> M.Tech Control & Instrumentation (MNNIT Allahabad) | B.Tech ECE (RCOEM Nagpur)
+> Locations: Bengaluru / Nagpur, India
+> Contact: kshitijsawarkar333@gmail.com | +91 9823252972
+> Profiles: https://github.com/KshitijSawarkar | https://linkedin.com/in/kshitijas
+
+## Core Summary
+Applied AI & Systems Engineer and M.Tech candidate in Control & Instrumentation at MNNIT Allahabad, specializing in autonomous agent workflows, low-latency edge inference, and deterministic systems automation. Proven record translating high-friction operational workflows into sub-50ms client-side schema engines and deploying quantized neural networks on edge hardware (IEEE Xplore Doc ID: 10627276). Strong background combining control systems theory, model evals, and multi-tier agent orchestration.
+
+## Primary Roles & Experience
+- **Wakefit Innovations Ltd** (Bengaluru, Aug 2026 – Present): Systems & Automation Engineering Intern (Intern-PGET). Architected client-side BOM & Finished Goods schema transformation engines executing in sub-50ms with 100% data privacy. Live: https://npl-automation.pages.dev, https://image-sequence-renamer.pages.dev
+- **MNNIT Allahabad** (Prayagraj, Aug 2025 – Present): Graduate Teaching Assistant (Control Systems & Instrumentation). Lectured & conducted lab experiments for 100+ undergraduate engineering students.
+- **Sharon Innovations (RCOEM TBI)** (Nagpur, Dec 2023 – Feb 2024): IoT & Embedded Systems Intern. ESP32/Arduino sensor nodes, ADC calibration, I2C/SPI/UART telemetry.
+- **AICTE** (Remote, May 2023 – Jul 2023): Cloud Infrastructure & MLOps Intern. AWS S3/Lambda serverless data ingestion pipelines (~99.9% uptime), Amazon SageMaker model deployment.
+
+## Peer-Reviewed Publication
+- **IEEE Xplore (Doc ID: 10627276, Mar 2026)**: "Automated Edge Vision & Retail Checkout System" - Lead Author. INT8 Post-Training Quantization via ONNX Runtime for custom YOLOv5 on Raspberry Pi (<1% mAP loss, 24.6ms sub-second inference).
+
+## Sovereign Ventures
+- **cardsfinders.com**: Founder & Full-Stack Edge Systems Architect. Cloudflare Pages/Workers, sub-second TTFB, zero server runtime compute costs.
+- **myuselessweb.com**: Creator & Edge Infrastructure Engineer. High-traffic interactive web platform deployed over Cloudflare edge (<50ms global latency).
+
+## 4-Pillar Systems Taxonomy
+1. **Applied AI & Edge Vision**: YOLOv5, OpenCV, INT8 Quantization, ONNX Runtime, Raspberry Pi, ROS2
+2. **Autonomous Agent Systems**: Agent State Machines, Model Context Protocol (MCP), LLM Failover Routing, Pydantic v2 Guardrails
+3. **Systems Automation & Edge Web**: Cloudflare Pages/Workers, Astro.js, Sub-50ms Schema Engines, Python, TypeScript
+4. **Control & Instrumentation**: Closed-Loop State Feedback, State-Space Modeling, HIL Testing, MATLAB/Simulink
